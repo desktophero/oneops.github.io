@@ -120,19 +120,18 @@ var CorpusSpy = {
                 return this;
         });
 
-        cur.sort(function (a, b) {
-            return a['selector'] > b['selector'];
-        });
-
-
         // Get the id of the current element
         cur = cur[cur.length - 1];
 
         //If there's no result, just get the first one on the page
-        if (!cur) cur = $($("#rightpage").find("article")[1]).find("h1").attr("id");
+        if (!cur) {
+            cur = CorpusSpy.lastId;
+            if (!cur) cur = $($("#rightpage").find("article")[1]).find("h1").attr("id");
+        }
+
         var id = cur && cur.length ? cur[0].id : "";
 
-        if (CorpusSpy.lastId !== id) {
+        if (id && CorpusSpy.lastId !== id) {
             CorpusSpy.lastId = id;
             this.setCurrentLocation(id);
         }
@@ -156,7 +155,8 @@ var CorpusSpy = {
     },
 
     elementIsNearTop: function (elem) {
-        return (elem.offset().top - $(document).scrollTop()) < 100;
+        var offsetCalc = elem.offset().top - $(document).scrollTop();
+        return offsetCalc > 0 && offsetCalc < 100;
     },
 
     elementIsNearBottom: function (elem) {
