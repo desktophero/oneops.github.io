@@ -14,7 +14,7 @@ OneOps enables continuous lifecycle management of complex, business-critical app
 2. Clone this repository.
 
   ```
-  $ git clone https://github.com/oneops/user-doc.git
+  $ git clone https://github.com/oneops/oneops.github.io.git
   ```
 
 3. Run Jekyll in the local repository's root directory.
