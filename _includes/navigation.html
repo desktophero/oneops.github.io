@@ -76,7 +76,7 @@
                      {% if article.path contains context_path %}
                         {% unless article.category %}
                         <li class="sub-menu-item">
-                          xxx <a href="{{site.baseurl}}/{{ context }}{{ section.path }}/#{{ article.title | slugify }}"
+                            <a href="{{site.baseurl}}/{{ context }}{{ section.path }}/#{{ article.title | slugify }}"
                               data-target="#{{ article.title | slugify }}">{{ article.title }}</a>
                         </li>
                         {% endunless %}
