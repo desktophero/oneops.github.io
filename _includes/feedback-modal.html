@@ -1,0 +1,27 @@
+<!-- modal content -->
+<div id="corpus-modal-content">
+  <div class="close"><a href="#" onclick="CorpusFeedback.modal(); return false;">x</a></div>
+  <div id="corpus-modal-data">
+
+    <div id="feedback-confirmation">
+      <div class="feedback-confirmation-message">
+        FEEDBACK SENT<br/>
+        THANK YOU
+      </div>
+    </div>
+
+    <h1 class="cme" style="font-family: 'Montserrat', sans-serif">PLEASE TELL US WHY THIS ARTICLE WAS NOT HELPFUL</h1>
+    <p>
+      <textarea maxlength="5000" id="corpus-feedback-textarea" class="corpus-modal-textarea cme" rows="10" cols="40"
+                placeholder="Feedback"></textarea>
+    </p>
+    <p>
+      <button class="corpus-modal-buttons corpus-default cme" onclick="CorpusFeedback.modal(); return false;">Cancel
+      </button>
+      <button class="corpus-modal-buttons corpus-primary cme" style="float:right"
+              onclick="CorpusFeedback.Group.prototype.vote()">Send
+      </button>
+    <center><img src="{{ site.baseurl }}/assets/shared/images/spinner.gif" id="spinner"/></center>
+    </p>
+  </div>
+</div>

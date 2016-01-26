@@ -1,0 +1,26 @@
+<!--header-->
+<section id="page-head">
+  <!--logo-->
+  <header id="logo">
+    <a href="{{ site.baseurl }}/"><img class="oneopsl" src="{{ site.baseurl }}/assets/shared/images/oneopslogo.png" alt=""></a>
+  </header>
+  <!--menu-->
+  <nav id="topnav">
+    <ul>
+{% assign url_parts = page.url | split: '/' %}
+{% if url_parts[2] != "index" %}{% assign topic = url_parts[2] %}{% endif %}
+{% assign current_context = url_parts[1] %}
+{% if current_context == null %}{% assign current_context = site.contexts | first | first %}{% endif %}
+{% for context in site.contexts %}
+      <li>
+        <a {% if current_context == context[0] %}class="active" {% endif %}href="{{ site.baseurl }}/{{ context[1] }}{{ topic }}">{{ context[0] | upcase }}S</a>
+      </li>
+{% endfor %}
+    </ul>
+	<div class="global-search">
+        <span class="icon-search gsi"></span>
+        <input data-name="search" data-search-types="all" type="text" value="Search" class="global-search-input"/>
+      </div>
+  </nav>
+</section>
+

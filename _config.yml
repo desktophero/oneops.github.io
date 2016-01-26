@@ -1,0 +1,105 @@
+# -----------------------------------------------------------------------------
+# Configuration for a solution documentation system
+# -----------------------------------------------------------------------------
+
+#
+# Collections for content articles
+#
+collections:
+    catalog:
+    contribution:
+    best_practices:
+    getting_started:
+    key_concepts:
+    overview:
+    prerequisites:
+    recipes:
+    references:
+        output: true
+        permalink: /reference/:path/
+    testing:
+    tools:
+    typical_scenarios:
+    updates:
+    releases:
+
+# Portal URL
+# ----------
+#
+# When baseurl is empty, project will be hosted in web server's root folder /
+#
+baseurl:
+
+# -----------------------------------------------------------------------------
+# Project Settings
+# -----------------------------------------------------------------------------
+
+#
+# The URL of the developer portal.
+#
+# Note: When hosting with Github Enterprise, it follows the standard:
+#       http(s)://[hostname]/pages/<username>/<projectname>
+#
+baseurl: 
+
+contexts:
+  user: user/
+  admin: admin/
+  developer: developer/
+
+
+# API urls
+searchurl: http://search.oneops.com/search 
+authurl: http://auth.oneops.com/auth
+feedbackurl: http://feedback.oneops.com/feedback
+githuburl: https://github.com
+
+# Search index name
+searchname: 'site-oneops-'
+
+# Google Analytics tracking id
+ga_tracking_id: "UA-72734811-2"
+
+#
+# Name of the project
+#
+name: OneOps Documentation
+
+#
+# Project logo.  If left blank, then project name will be displayed instead of logo
+#
+#logo: /assets/local/images/sub-logo.png
+slack_url: https://oneops.slack.com/
+slack_channel: oneops
+
+# -----------------------------------------------------------------------------
+
+#
+# use redcarpet as the Markdown processor. Make it as close to GFM as possible
+# redcarpet must be installed "$sudo gem install redcarpet"
+#
+markdown: redcarpet
+redcarpet:
+    extensions: [fenced_code_blocks, disable_indented_code_blocks, no_intra_emphasis, tables, autolink, strikethrough, with_toc_data]
+
+#
+# Exclude the following files from the generated site
+#
+exclude: [
+    "README.md",
+    "LICENSE",
+    "_TEMPLATE.md",
+    ".gitignore",
+    "/versions/draft",
+    "templates"
+]
+
+#
+# System wide defaults
+#
+defaults:
+    -
+        scope:
+            path: ""
+        values:
+            layout: "default"

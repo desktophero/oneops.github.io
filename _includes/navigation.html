@@ -1,0 +1,98 @@
+{% for context in site.contexts %}
+{% assign context_path = context[1] | prepend: '/' %}
+{% if page.url contains context_path %}
+{% assign context = context[0] %}
+{% break %}
+{% else %}
+{% assign context = site.contexts | first | first  %}
+{% endif %}
+{% endfor %}
+{% assign context_path = context | prepend: '/' | append: '/' %}
+
+<article id="page-search">
+   <h4>Search</h4>
+   <input data-name="search" data-search-types="section" data-search-name="{{ site.searchname }}{{ context }}" type="text" value="Search" class="side-nav-search-input"/>
+</article>
+<!--left sub navigation-->
+<nav id="sidenav">
+   <h2>DOCUMENTATION</h2>
+   <ul class="nav">
+
+      {% assign counter = 1 %}
+      {% for section in site.data.sections %}
+      {% assign groups = site[section.collection] | group_by: "category" %}
+      {% assign ungrouped_articles = site[section.collection] %}
+      {% if groups %}
+      <li>
+         <a onclick="CorpusSpy.linkClick('{{site.baseurl}}/{{ context }}{{ section.path }}', '{{ section.name | slugify}}')">
+            {{ section.name }}
+            <span class="caret"></span>
+         </a>
+         <ul id="dropdown-menu-{{ section.name | slugify }}" class="hidden">
+            {% if section.name == "Releases" or section.name == "Updates" %}
+            {% for article in ungrouped_articles reversed %}
+            <li class="sub-menu-item">
+               <a href="{{site.baseurl}}/{{ context }}{{ section.path }}/#{{ article.title | slugify }}"
+                  data-target="#{{ article.title | slugify }}">{{ article.title }}</a>
+            </li>
+            {% endfor %}
+            {% else %}
+
+            {% for group in groups %}
+               {% assign counter = counter | plus:'1' %}
+               {% assign menu_name = 'dropdown-menu-' | append: section_name | append: group.name | append: counter | slugify  %}
+               {% if group.name.size > 0 %}
+               {% assign articles = site[section.collection] | where: "category", group.name %}
+               <li>
+                     <a onclick="$('#{{menu_name}}').toggleClass('hidden');">
+                        {{ group.name }}
+                        <span class="caret"></span>
+                     </a>
+                     <ul id="{{ menu_name }}" class="hidden">
+
+                        {% for item in articles %}
+                           {% assign item.upper_title =  item.title | upcase %}
+                        {% endfor %}
+
+                        {% assign articles = (articles | sort: "upper_title") %}
+                        {% for article in articles %}
+                           {% if article.path contains context_path %}
+                           <li class="sub-menu-item">
+                              <a href="{{site.baseurl}}/{{ context }}{{ section.path }}/#{{ article.title | slugify}}"
+                                 data-target="#{{ article.title | slugify }}">{{ article.title }}</a>
+                           </li>
+                           {% endif %}
+                        {% endfor %}
+                     </ul>
+                  </li>
+               {% else %}
+                  {% for item in ungrouped_articles %}
+                     {% assign item.upper_title =  item.title | upcase %}
+                  {% endfor %}
+
+                  {% assign ungrouped_sorted_articles = (ungrouped_articles | sort: "upper_title") %}
+
+                  {% for article in ungrouped_sorted_articles %}
+                     {% if article.path contains context_path %}
+                        {% unless article.category %}
+                        <li class="sub-menu-item">
+                          xxx <a href="{{site.baseurl}}/{{ context }}{{ section.path }}/#{{ article.title | slugify }}"
+                              data-target="#{{ article.title | slugify }}">{{ article.title }}</a>
+                        </li>
+                        {% endunless %}
+                     {% endif %}
+                  {% endfor %}
+               {% endif %}
+            {% endfor %}
+            {% endif %}
+         </ul>
+      </li>
+      {% else %}
+      <li>
+         <a href="{{site.baseurl}}/{{ context }}{{ section.path }}"
+            data-target="#{{ section.name | slugify }}">{{ section.name }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+   </ul>
+</nav>

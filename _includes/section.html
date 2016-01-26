@@ -1,0 +1,28 @@
+
+{% assign groups = section | group_by: "category" | sort_by: "name" %}
+{% assign url_parts = page.url | split: '/' %}
+{% assign context = url_parts[1] | prepend: '/' | append: '/' %}
+
+{% for group in groups %}
+<h1 class="secondary">{{ group.name | upcase }}</h1>
+
+{% for item in group %}
+{% assign item.upper_title =  item.title | upcase %}
+{% endfor %}
+
+{% assign group_items = (group.items | sort: "upper_title") %}
+{% for item in group_items %}
+{% if item.path contains context %}
+{% assign found_content = true %}
+<article>
+  <h1 id="{{ item.title | slugify }}">{{ item.title }}
+  </h1>
+  {{ item.content }}
+  {% include feedback.html %}
+</article>
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% unless found_content %}
+{% include empty-article.html %}
+{% endunless %}

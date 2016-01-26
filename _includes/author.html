@@ -1,0 +1,15 @@
+{% if include.author %}
+  {% assign author = include.author %}
+  {% if author contains 'http' %}
+  {% assign parts = author | split : '/' %}
+  <a href="{{ author }}" class="post-author">
+  <img src="{{ author }}.png" class="avatar" alt="{{ author }} avatar" width="24" height="24">
+  {{ parts | last }}
+  </a>
+  {% else %}
+  <a href="{{ site.githuburl }}{{ author }}" class="post-author">
+  <img src="{{ site.githuburl }}{{ author }}.png" class="avatar" alt="{{ author }} avatar" width="24" height="24">
+  {{ author }}
+  </a>
+  {% endif %}
+{% endif %}
