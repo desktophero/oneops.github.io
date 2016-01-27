@@ -78,8 +78,8 @@ See Also
 
  * [Trouble connecting to port 3000](../testing#ui-does-not-come-up-on-aws-image)
  * [Deployment fails ](../testing#deployment-fails-on-aws-image)
+ * We can help :<span class="button icon-slack"><a href="{{ site.slack_url }}" target="_blank">{{ site.slack_channel }}</a></span>
 
-# Installing Vagrant Image
 
 To get your first instance of OneOps working, a Vagrant [setup](
 https://github.com/oneops/setup) is provided.
