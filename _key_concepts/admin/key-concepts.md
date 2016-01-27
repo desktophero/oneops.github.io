@@ -20,7 +20,7 @@ The diagram below depicts a detailed system architecture .
 
 
 
-## Web Appp aka *display*
+## Web App aka *display*
 * Self service portal for managing **applications, clouds, organization,services**.
 * Rest based API's to do almost anything which can be done on UI.
 * Can be integrated with sign on from AD
