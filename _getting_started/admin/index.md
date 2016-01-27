@@ -45,7 +45,13 @@ On the right hand side you will see the list of services this cloud provides. </
 
 ![EC2Cloud Home ](../../assets/local/images/GettingStartedEC2Cloud.png)
 
-For each one of them you will have to provide your access key and secret key. Yes you will have to do it for each one of them which is pain, but what if you want to use services from different providers :-)
+
+For each one of them you will have to provide your access key and secret key.
+* Make sure this user has appropriate permissions to manage cloud services (EC2,route53 as the case may be)
+
+Yes you will have to do it for each one of them which is pain, but what if you want to use services from different providers :-)
+
+
 
 ![](../../assets/local/images/GettingStartedEC2Service.png)
 
@@ -68,56 +74,21 @@ The system will generate the deployment plan with steps that will be executed. R
 
 While deployment is in progress you can click on the steps to expand to work orders (one step can have multiple work orders). And there you can click on the log link to see what's going under the hood.Once deployment is complete you can go to operations page and examine what you have there. Also check your ec2 dashboard to see the result.
 
+See Also
 
-### Troubleshooting
-q. What if I can't connect on port 3000 of my instance?</br>
-a. Most likely the rails server didn't start properly, try to ssh to your vm and do
+ * [Trouble connecting to port 3000](../testing#ui-does-not-come-up-on-aws-image)
+ * [Deployment fails ](../testing#deployment-fails-on-aws-image)
+ * We can help :<span class="button icon-slack"><a href="{{ site.slack_url }}" target="_blank">{{ site.slack_channel }}</a></span>
 
-```bash
-$ sudo service display start
-```   
-check the log at /opt/oneops/log/rails.log
 
-For other issues :<span class="button icon-slack"><a href="{{ site.slack_url }}" target="_blank">{{ site.slack_channel }}</a></span>
-
-# Installing Vagrant Image
-
-To get your first instance of OneOps working, a Vagrant setup is provided.
+To get your first instance of OneOps working, a Vagrant [setup](
+https://github.com/oneops/setup) is provided.
 
 ## Check Out the Vagrant Project
 
 ```bash
 $ git clone https://github.com/oneops/setup
 $ cd setup/vagrant
-```
-
-## Configure Your SSH Keys
-
-If you don't have any keys configured, follow the <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">GitHub instructions</a>.
-
-```bash
-$ cp ~/.ssh/id_rsa git_ssh/git_rsa
-```
-
-If you see the following log messages when Vagrant is provisioning, you have not configured your SSH keys correctly:
-
-```
-==> default: doing dev tools git clone
-==> default: Initialized empty Git repository in /home/oneops/build/dev-tools/.git/
-==> default: Warning: Permanently added 'github.com,192.30.252.130' (RSA) to the list of known hosts.
-==> default: Permission denied (publickey).
-==> default: fatal: The remote end hung up unexpectedly
-```
-
-After you have fixed your SSH keys, you can continue the Vagrant provisioning by running:
-
-```bash
-$ vagrant up --provision
-```
-
-## Start Vagrant
-
-```bash
 $ vagrant up
 ```
 
@@ -135,6 +106,8 @@ Once the build is complete, the following message appears:
 ==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
 ==> default: All done at : 15:28:54
 ```
+# Set up Vagrant Inductor
+Refer [Install](https://github.com/oneops/setup#install)
 
 To continue the setup, connect to <a href="http://localhost:9090" target="_blank">http://localhost:9090.</a>
 
@@ -144,10 +117,6 @@ Create your first user by going through the registration process.
 
 After the registration process is complete, log in with the new user you created.
 
-Accept the terms and conditions.
-
-![](../../assets/local/images/admin-first-registration-tc1.png)
-![](../../assets/local/images/admin-first-registration-tc.png)
 
 You are now in OneOps.
 
@@ -173,9 +142,6 @@ To add a cloud, refer to the following:
 ![](../../assets/local/images/admin-cloud-created.png)
 
 
-# Confirming it Works
-
-REPLACE WITH how to test that the product is correctly installed.
 
 # Before You Begin
 
