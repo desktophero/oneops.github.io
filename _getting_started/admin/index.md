@@ -84,6 +84,7 @@ See Also
 To get your first instance of OneOps working, a Vagrant [setup](
 https://github.com/oneops/setup) is provided.
 
+# Installing Vagrant Image
 ## Check Out the Vagrant Project
 
 ```bash
