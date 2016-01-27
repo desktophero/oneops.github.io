@@ -18,7 +18,7 @@
   collection: "best_practices"
   path: "/best-practices"
   
-- name: "Reference"
+- name: "References"
   collection: "references"
   path: "/references"
 
