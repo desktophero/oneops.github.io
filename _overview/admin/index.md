@@ -2,12 +2,14 @@
 title: "Overview"
 id: "overview"
 ---
+> For general Overview of what OneOps does refer [OneOps](http://oneops.com/about.html)
 
->An *administrator* is responsible for managing and deploying *OneOps*.
+>> An *administrator* is responsible for managing and deploying *OneOps*.
 
 # OneOps
 OneOps enables continuous lifecycle management of complex, business-critical application workloads on any cloud-based
 infrastructure.
+
 
 # OneOps Administrator
 

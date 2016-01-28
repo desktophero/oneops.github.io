@@ -24,7 +24,6 @@ The existing <a href="https://github.com/oneops/circuit-oneops-1/tree/master/com
 1. Edit/Create a <a href="https://github.com/oneops/circuit-oneops-1/blob/master/components/cookbooks/tomcat/metadata.rb" target="_blank">metadata.rb</a> file under your cookbook home.<br/>
 2. In the metadata.rb file:
      * Define the metadata for your cookbook's attributes. Refer to the file above, as an example.
-     * There is one-to-one mapping between the attributes defined in the cookbook attribute file (`attributes/default.rb`) and the attributes metadata in `metadata.rb`.
      * Define the recipe list at the bottom. (Refer to the Tomcat `metadata.rb`.)
 
      These recipes are shown as action buttons on the OneOps GUI when you click that component in the "Operations" phase. When clicked, OneOps calls that recipe from that cookbook. For example, start/stop/restart of Tomcat.
