@@ -3,6 +3,9 @@ title: Key Concepts
 id: key-concepts
 ---
 
+>It's a multi-cloud application orchestrator. OneOps lets you design your application in a cloud agnostic way (by abstracting multiple cloud providers). It manages your application's design, deployments, operations & monitoring. At the moment these cloud providers are supported - http://oneops.com/integrations.html#clouds
+
+
 # Architecture Overview
 OneOps includes a **self service portal** for users to administer the applications, has a back end **automation engine** to support complete application life cycle management.  
 
