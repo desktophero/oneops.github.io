@@ -43,6 +43,7 @@ var CorpusAnimate = {
         }, 400, function () {
             // Animation complete.
             CorpusAnimate.searchIsOpen = true;
+            $(".global-search-input").focus();
         });
     }
 
