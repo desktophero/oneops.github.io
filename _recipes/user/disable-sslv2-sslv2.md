@@ -7,10 +7,10 @@ id: disable-sslv3-sslv2
 
 By default, the Tomcat SSL connector is configured to use the TLSv1,TLSv1.1,TLSv1.2, so no action is normally required.
 
-1. Make sure Tomcat is updated and deployed after 10-30-2014. (Current rollout date is 10-30-2014. The attribute should be set to readonly.)
-  
-    ![SSL Protocols](../../assets/local/images/ssl-protocols.png)
-  
+1. Make sure Tomcat is updated and deployed
+
+  ![SSL Protocols](../../assets/local/images/ssl-protocols.png)
+
 2. You could additionally log into the server and you should see the following in server.xml
 
     ```xml

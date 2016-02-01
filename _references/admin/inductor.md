@@ -10,6 +10,8 @@ message back to the **controller**.
 The `account.Cloud.location` is used by the controller to publish the order into a queue.  The inductors consume,
 does the work and publish the result back to the `controller.response queue`.
 
+![](../../assets/local/images/inductor-controller.png)
+
 Here is the logical flow from CMS:
 
 ![](../../assets/local/images/cms-order-execution.png)
