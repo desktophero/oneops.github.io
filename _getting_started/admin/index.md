@@ -131,7 +131,7 @@ The setup does the following :
   ==> default: All done at : 15:28:54
   ```
 
-If step fails refer **[troubleshooting]**(../testing).
+If step fails refer [troubleshooting](../testing).
 
 > UI should be up [here](http://localhost:9090/users/sign_in).
 
