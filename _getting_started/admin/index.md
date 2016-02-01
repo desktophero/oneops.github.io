@@ -74,74 +74,127 @@ The system will generate the deployment plan with steps that will be executed. R
 
 While deployment is in progress you can click on the steps to expand to work orders (one step can have multiple work orders). And there you can click on the log link to see what's going under the hood.Once deployment is complete you can go to operations page and examine what you have there. Also check your ec2 dashboard to see the result.
 
-See Also
+##Troubleshooting
 
- * [Trouble connecting to port 3000](../testing#ui-does-not-come-up-on-aws-image)
- * [Deployment fails ](../testing#deployment-fails-on-aws-image)
+ * [Trouble connecting to port 3000](../testing#ui-does-not-come-up)
+ * [Deployment fails ](../testing#deployment-fails)
+ * Not here , look [here](../testing)
  * We can help :<span class="button icon-slack"><a href="{{ site.slack_url }}" target="_blank">{{ site.slack_channel }}</a></span>
 
 
-To get your first instance of OneOps working, a Vagrant [setup](
-https://github.com/oneops/setup) is provided.
-
 # Installing Vagrant Image
-## Check Out the Vagrant Project
+Install OneOps using vagrant from [here](https://github.com/oneops/setup)
 
-```bash
-$ git clone https://github.com/oneops/setup
-$ cd setup/vagrant
-$ vagrant up
+>Note : As an **admin** you will be responsible for primarily installing OneOps in your **organization** or also responsible for setting
+up cloud and services The steps described to create an assembly,platform refers to [User](/../../user) section.
+
+
+## Outline
+ 1. Setup  Vagrant  [here](#vagrant-up)
+  2. Set up *clouds*. Refer screen cast  below and [user](../../user/getting-started/#create-cloud)   
+    1. Create Clouds
+    2. Create Cloud Services
+        1. Compute Cloud Service
+        2. DNS Cloud Service
+        3. GNS Cloud Service
+  3. Create [Inductors](#set-up-inductor) for clouds
+  4. Create Assembly
+          1. Create Platform
+          2. Create Environment
+          3. Deploy an Environment
+
+# Vagrant up
+1. Install the required software for Vagrant
+
+  1. [Virtal Box 5](https://www.virtualbox.org/).
+  2. [Vagrant]("https://www.vagrantup.com/)
+
+2. Execute the following
+
+ ``` bash
+   git clone https://github.com/oneops/setup
+   cd setup/vagrant
+   vagrant up
+  ```
+The setup does the following :
+
+  * Installs all required software see [here](/admin/key-concepts/#oneops-system-architecture)
+  * Sets up minimal data set required for OneOps to work.
+  * Clones, Builds and Deploys all the required components to run [OneOps].(/admin/key-concepts/#oneops-system-architecture)
+  * Bootstraps the  circuits from circuit-oneops 1
+
+  ``` bash
+# After the successful install , you wills see this in console.
+  ==> default: Done with admin
+  ==> default: OneOps should be up on http://localhost:3000
+  ==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
+  ==> default: All done at : 15:28:54
+  ```
+
+If step fails refer **[troubleshooting]**(../testing).
+
+> UI should be up [here](http://localhost:9090/users/sign_in).
+
+# Set Up your Organization , Clouds, Cloud Services  
+   ## Refer [User] (../../user/getting-started/#create-cloud)
+   Or see screen cast below.
+
+# Set up [Inductor](../key-concepts#inductor)
+
+At this time, we are ready to set up inductor for newly created cloud.
+
+[Inductor]() executes the [workoders/actionOrders][] pushed by [controller] to
+cloud location specified at cloud creation. Refer [arch diagram]() for overall flow.
+
+## Log on to Vagrant Image
+
+``` bash
+vagrant ssh
+sudo su
+cd /opt/oneops/inductor
+inductor create
+# Answer the questions, pay attention to cloud location and secret key .
+# Use /public/oneops/clouds/aws as location if you are choosing aws cloud.
+# The screen cast shows the inductor answers and setup for two of cloud providers
+# Refer https://github.com/oneops/setup#install
+```
+##Inductor directory Structure
+>The directory structure after you have created inductor successfully will look like this.
+
+``` bash
+cd /opt/oneops/inductor
+├── circuit-oneops-1 -> /home/oneops/build/circuit-oneops-1 from (https://github.com/oneops/circuit-oneops-1)
+├── clouds-available # All inductor which are created will go in this
+│   └── public.oneops.clouds.aws
+├── clouds-enabled
+│   └── public.oneops.clouds.aws -> ../clouds-available/public.oneops.clouds.aws
+├── Gemfile
+├── Gemfile.lock
+├── init.d
+│   └── inductor
+├── lib
+│   └── client.ts
+├── log
+└── shared ## All shared cookbooks from (https://github.com/oneops/oneops-admin/tree/master/lib/shared)
+    ├── cookbooks
+    ├── exec-gems.yaml
+    ├── exec-order.rb
+    └── hiera.yaml
+
+#After the successful creation of inductor you will see the following messages in logs
+
+2016-02-01 01:54:09,505  INFO   FailoverTransport:1065  Successfully connected to ssl://localhost:61617?keepAlive=true
 ```
 
-Once Jenkins starts, you can monitor the building process on : <a href="http://localhost:3003" target="_blank">http://localhost:3003</a>
+# Validate Set up
 
-![](../../assets/local/images/vagrant-build-progress.png)
-
-# Setup and Configuration
-
-Once the build is complete, the following message appears:
-
-```bash
-==> default: Done with admin
-==> default: OneOps should be up on http://localhost:3000
-==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
-==> default: All done at : 15:28:54
-```
-# Set up Vagrant Inductor
-Refer [Install](https://github.com/oneops/setup#install)
-
-To continue the setup, connect to <a href="http://localhost:9090" target="_blank">http://localhost:9090.</a>
-
-Create your first user by going through the registration process.
-
-![](../../assets/local/images/admin-first-registration.png)
-
-After the registration process is complete, log in with the new user you created.
+    Create Assembly, Platforms and environment to test it out. Refer [User](./user/getting-started)
+    Or
+    See screen cast below (might work better on the full screen, we are working on improving this).
 
 
-You are now in OneOps.
 
-## Create Cloud Provider
-
-Before you can deploy and manage applications using OneOps, you have to add a Cloud Provider.
-
-## Create an Organization
-
-![](../../assets/local/images/admin-first-screen.png)
-
-Create the first organization.
-
-![](../../assets/local/images/admin-create-organization.png)
-
-## Add a Cloud
-
-
-To add a cloud, refer to the following:
-
-![](../../assets/local/images/admin-add-cloud.png)
-![](../../assets/local/images/admin-create-cloud.png)
-![](../../assets/local/images/admin-cloud-created.png)
-
+<iframe src="https://player.vimeo.com/video/153733812" width="200 " height="253" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 # Before You Begin
