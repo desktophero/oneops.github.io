@@ -1,6 +1,5 @@
 ---
-title: "Updates" 
-author: "virtualtraveler"
+title: "Updates"
 permalink: user/updates/
 ---
 
@@ -22,17 +21,14 @@ permalink: user/updates/
 {% endif %}
 </h1>
 <article data-category="{{ update.category | downcase }}" data-hidden="{{ update.hidden }}">
-  <div class="article-meta">
-    {% include author.html author=update.author %}
-	<span class="date">{{ update.publication-date }}</span>
-  </div>
+
   <div class="description article-content">
-    {{ update.description }}
+    {{ update.content }}
   </div>
 {% include feedback.html %}  
 </article>
 {% endif %}
 {% endfor %}
-{% unless content_found %}
+{% unless found_content %}
 {% include empty-article.html %}
 {% endunless %}
