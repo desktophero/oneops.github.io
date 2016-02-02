@@ -120,8 +120,8 @@ The setup does the following :
 
   * Installs all required software see [here](/admin/key-concepts/#oneops-system-architecture)
   * Sets up minimal data set required for OneOps to work.
-  * Clones, Builds and Deploys all the required components to run [OneOps].(/admin/key-concepts/#oneops-system-architecture)
-  * Bootstraps the  circuits from circuit-oneops 1
+  * Clones, Builds and Deploys all the required components to run [OneOps](/admin/key-concepts/#oneops-system-architecture)
+  * Bootstraps the  circuits from [circuit-oneops](https://github.com/oneops/circuit-oneops-1/)
 
   ``` bash
 # After the successful install , you wills see this in console.
@@ -143,8 +143,8 @@ If step fails refer [troubleshooting](../testing).
 
 At this time, we are ready to set up inductor for newly created cloud.
 
-[Inductor]() executes the [workoders/actionOrders][] pushed by [controller] to
-cloud location specified at cloud creation. Refer [arch diagram]() for overall flow.
+Inductor executes the **workoders/actionOrders** pushed by **controller** to
+cloud location specified at cloud creation. Refer [this](../references/#inductor) for overall flow.
 
 ## Log on to Vagrant Image
 
