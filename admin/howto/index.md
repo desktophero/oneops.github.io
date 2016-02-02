@@ -1,6 +1,5 @@
 ---
-title: "How To" 
-author: "virtualtraveler"
+title: "How To"
 permalink: admin/howto/
 ---
 
@@ -9,4 +8,3 @@ permalink: admin/howto/
 <h1 class="primary">{{ page.title | upcase }}</h1>
 
 {% include section.html %}   
-
