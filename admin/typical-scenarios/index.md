@@ -1,6 +1,5 @@
 ---
 title: "Typical Usage Scenarios"
-author: "virtualtraveler"
 permalink: admin/typical-scenarios/
 ---
 

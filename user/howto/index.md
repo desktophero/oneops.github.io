@@ -1,6 +1,6 @@
 ---
 title: "How To" 
-author: "virtualtraveler"
+
 permalink: user/howto/
 ---
 {% assign section = site.recipes %}

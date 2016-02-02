@@ -1,6 +1,6 @@
 ---
 title: "Testing & Debugging"
-author: "virtualtraveler"
+
 permalink: /:path/
 ---
 

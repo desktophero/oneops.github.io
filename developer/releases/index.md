@@ -1,6 +1,6 @@
 ---
 title: "Releases"
-author: "virtualtraveler"
+
 permalink: developer/releases/
 ---
 

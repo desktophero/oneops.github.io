@@ -1,6 +1,6 @@
 ---
 title: "How To" 
-author: "virtualtraveler"
+
 permalink: /:path/
 ---
 

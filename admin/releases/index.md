@@ -1,6 +1,5 @@
 ---
 title: "Releases"
-author: "virtualtraveler"
 permalink: admin/releases/
 ---
 
