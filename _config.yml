@@ -78,9 +78,9 @@ slack_channel: oneops
 # use redcarpet as the Markdown processor. Make it as close to GFM as possible
 # redcarpet must be installed "$sudo gem install redcarpet"
 #
-markdown: redcarpet
-redcarpet:
-    extensions: [fenced_code_blocks, disable_indented_code_blocks, no_intra_emphasis, tables, autolink, strikethrough, with_toc_data]
+markdown: kramdown
+#redcarpet:
+#    extensions: [fenced_code_blocks, disable_indented_code_blocks, no_intra_emphasis, tables, autolink, strikethrough, with_toc_data]
 
 #
 # Exclude the following files from the generated site

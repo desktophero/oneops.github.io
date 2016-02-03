@@ -195,9 +195,9 @@ A platform can inherit one or more additional packs by using `include_pack`
 
 For example:
 
-````
+~~~ruby
 include_pack 'generic_ring'
-````
+~~~
 
 ## Properties
 

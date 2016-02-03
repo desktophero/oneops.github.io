@@ -7,23 +7,23 @@ id: build-install-configure-an-inductor
 
 1. Build the jar file. It is in `target/inductor-VERSION.jar`.
     
-    ```bash
+    ~~~bash
 $ mvn clean package
-```
+~~~
     
 2. Build the gem. 
     
-    ```bash
+    ~~~bash
 $ gem build inductor.gemspec
-```
+~~~
     
     It creates an `inductor-VERSION.gem` in the root directory.
 
 3. Install the gem from the root directory.
     
-    ```bash
+    ~~~bash
 $ gem install inductor-VERSION.gem
-```
+~~~
 
 # Configure
 
@@ -43,7 +43,7 @@ This is generated via the inductor gem when `inductor add` is run.
 
 The following are sample contents:
 
-```bash
+~~~bash
 # usually set by inductor gem or inductor_config_gen and based on zone
 amq.user =
 amq.pass =
@@ -57,5 +57,5 @@ scan_path = /opt/oneops/inductor/retry
 scan_period = 5
 data_dir = /opt/oneops/tmp
 mgmt_domain = changeme.oneops.com
-```
+~~~
 

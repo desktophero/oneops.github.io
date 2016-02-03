@@ -37,7 +37,8 @@ The easiest way to start is to copy an existing cookbook and pack (for example, 
 
 1. To create a cookbook, enter the following:
 
-    ```bash
+~~~bash
+
 # Change to repo
 $ cd circuit-oneops-1
 # Create new component called "mycomp"
@@ -48,7 +49,7 @@ $ bundle exec knife cookbook create mycomp
 ** Creating metadata for cookbook: mycomp
 # Start defining the attributes
 $ vi components/cookbooks/mycomp/metadata.rb
-```
+~~~
 
 3. Develop the recipes for your component (for example, `add`, `delete`, `update`, `replace`, `repair` lifecycle actions).
 4. After you complete the cookbook design, create the pack under the `/packs` directory.
@@ -58,13 +59,13 @@ $ vi components/cookbooks/mycomp/metadata.rb
 
 To create a pack, follow these steps:
 
-```bash
+~~~bash
 # Change to packs directory
 $ cd circuit-oneops-1/packs
 $ cp tomcat.rb mypack.rb
 # Create a new pack mypack.rb
 $ vi mypack.rb
-```
+~~~
 
 > As in the case of chef recipes, a OneOps pack is also defined using a custom Ruby DSL with syntax like variable, resource, relation, etc. Because the Pack DSL is a Ruby DSL, anything that can be done using Ruby can also be done in a Pack, including if and case statements, using the include? Ruby method, etc. For detailed information on how to develop a pack, see [Add a Platform](../howto/#add-a-platform).
 
@@ -80,86 +81,63 @@ To create a circuit, refer to:
 # Confirming it Works
 
 ## Testing
+> This section is useful if you are using a shared dev instance in your organization .
 
 Before you start the testing, make sure you have access to your OneOps dev instance and have added your SSH keys to the Inductor.
 
-1. Sync the metadata and packs.
+~~~bash
+# Sync the metadata and packs.
+# This is only required if there are any changes in the metadata or pack:
+# Pack sync commands.
+    cd circuit-oneops-1/
 
-    This is only required if there are any changes in the metadata or pack:
+# Export the OneOps CMS API.
 
-    
+ export CMSAPI=http://<your OneOps instance>:8080/
 
-2. Pack sync commands.
+# Sync the mycomp metadata.
 
-     ```bash
-$ cd circuit-oneops-1/
-```
+   bundle exec knife model sync mycomp
 
-3. Export the OneOps CMS API.
+# Sync mypack
 
-    ```bash
-$ export CMSAPI=http://<your OneOps instance>:8080/
-```
+   bundle exec knife pack sync packs/mypack --reload
 
-4. Sync the mycomp metadata.
+# Clear the Cache
 
-    ```bash
-$ bundle exec knife model sync mycomp
-```
+curl http://<your OneOps instance>:8080/transistor/rest/cache/md/clear      
 
-5. Sync mypack
+# Upload the cookbooks and packs to the Inductor.
+# Upload the cookbooks
 
-    ```bash
-$ bundle exec knife pack sync packs/mypack --reload
-```
+curl http://<yourOneOpsinstance>:8080/transistor/rest/cache/md/clear
 
-6. Clear the Cache
+# Select the Repo.
 
-    ```bash
-$ curl http://<your OneOps instance>:8080/transistor/rest/cache/md/clear      
-```
+ cd circuit-oneops-1
 
-7. Upload the cookbooks and packs to the Inductor.
-8. Upload the cookbooks
+#Copy the Cookbook to the Corresponding Repo in the Inductor (/opt/oneops)
 
-    ```bash
-$ curl http://<your OneOps instance>:8080/transistor/rest/cache/md/clear
-```      
+ scp -r components/cookbooks/mycomp ooadmin@<your OneOps instance inductor>:/opt/oneops/circuit-oneops-1/current/components/cookbooks/
 
-9. Select the Repo.
+# Copy the Pack File to the Corresponding Repo in the Inductor (/opt/oneops)
 
-    ```bash
-$ cd circuit-oneops-1
- ```
+ scp packs/mypack.rb ooadmin@<your OneOps instance inductor>:/opt/oneops/circuit-oneops-1/current/packs/
+~~~  
 
-10. Copy the Cookbook to the Corresponding Repo in the Inductor (/opt/oneops)
+#Add an icon image for the pack
+* Component Icon : **128x128 PNG** graphic - Add to circuit-oneops-1/components/cookbooks/<mycomp>/doc (ex. apache_cassandra)
 
-    ```bash
-$ scp -r components/cookbooks/mycomp ooadmin@<your OneOps instance inductor>:/opt/oneops/circuit-oneops-1/current/components/cookbooks/
-```
+* Pack(Platform) Icon : **128x128 PNG** graphic - Add to circuit-oneops-1/packs/doc/
+# see https://github.com/oneops/circuit-oneops-1/tree/master/packs/doc
 
-11. Copy the Pack File to the Corresponding Repo in the Inductor (/opt/oneops)
-
-    ```bash
-$ scp packs/mypack.rb ooadmin@<your OneOps instance inductor>:/opt/oneops/circuit-oneops-1/current/packs/
-```
-
-12. Add an icon image for the pack:
-     * Component Icon: 128x128 PNG graphic. Create a pull request to OneOps display CMS directory.
-     * Pack (Platform) Icon: 128x128 PNG graphic. Create a pull request to OneOps display pack directory.
-
-13. Create a New Assembly and env.
-14. Now you are ready to test the pack by creating a new assembly and env in `https://<your OneOps instance inductor>/`.
-
+# Testing via GUI
+1. Create a new *Assembly* and **environment**.
+2. Now you are ready to test the pack by creating a new assembly and env in `https://<your OneOps instance inductor>/`.
     >Do not store any of your source code in oneops/inductor dev env. This env is upgraded every Wednesday as part of the regular OneOps release cycle.
-
-15. Create a pull request.
-
+3. Create a pull request.
      After you make sure that everything is working fine in the dev env, commit the code and create a pull request from your forked repo.
 
-16. Push to production.
-
-The pull request is merged to the OneOps master branch as part of the OneOps production release cycle (every Wednesday).
 
 # Before You Code
 

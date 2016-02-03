@@ -11,19 +11,22 @@ id: "developer-prerequisites"
 
   * Ruby
 
-```ruby
+~~~ruby
 # Install RVM
-$\curl -sSL https://get.rvm.io | bash
+\curl -sSL https://get.rvm.io | bash
 # Install Ruby
-$ rvm install ruby-1.9.3
-$ rvm use --default ruby-1.9.3
-```
+rvm install ruby-1.9.3
+rvm use --default ruby-1.9.3
+
+~~~
+
+
  * Get [circuit-oneops](https://github.com/oneops/circuit-oneops-1) source
  * Install [circuit](#../key-concepts/circuit)
 
-```ruby
-$ gem install --local oneops-admin-1.0.0.gem
-```
+~~~ruby
+ gem install --local oneops-admin-1.0.0.gem
+~~~
 
 
 

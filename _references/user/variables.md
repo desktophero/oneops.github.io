@@ -2,7 +2,7 @@
 title: Variables
 id: variables
 ---
-Use Variables to externalize configuration attributes values which may change for an application at cloud , global( shared across platforms), or platform specific. You can create secure variables. 
+Use Variables to externalize configuration attributes values which may change for an application at cloud , global( shared across platforms), or platform specific. You can create secure variables.
 
 The three areas to store variables are:
 
@@ -16,8 +16,8 @@ Variables are put to use when you have an attribute, as you saw above in the Tom
 
 Variable reference example syntax:
 
-```bash
+~~~bash
 $OO_CLOUD{cloudvarname1}
 $OO_GLOBAL{globalvarname2}
 $OO_LOCAL{localvarname3}
-```
+~~~

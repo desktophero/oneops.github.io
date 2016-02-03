@@ -12,7 +12,7 @@ Metadata files model components and have several parts:
 
 The following is an example of a metadata file:
 
-```ruby
+~~~ruby
 # 1: base/required attributes
 name             "Apache"
 description      "Installs/Configures Apache"
@@ -52,7 +52,7 @@ recipe "start", "Start Apache"
 recipe "stop", "Stop Apache"
 recipe "restart", "Restart Apache"
 recipe "repair", "Repair Apache"
-```
+~~~
 
 # See Also
 

@@ -3,15 +3,12 @@ title: overview
 id: overview
 ---
 
-> * For a general overview of What OneOps does see [oneops.com] (http://www.oneops.com)
-
-> * This document provides an overview of the OneOps product from an *end user*
+> * For a general overview of What OneOps does see [oneops.com](http://www.oneops.com)
+* This document provides an overview of the OneOps product from an *end user*
 deploying application in cloud  using an already running **OneOps instance**.
-
-> * If you are someone who wants to set up OneOps for an organization or want to
+* If you are someone who wants to set up OneOps for an organization or want to
 try locally OneOps refer [admin][].
-
-> * Looking for developing or contributing content to OneOps please refer [developer][].
+* Looking for developing or contributing content to OneOps please refer [developer][].
 
 
 
@@ -86,6 +83,7 @@ Monitor and control your environments to maintain the required operational level
 # Platforms Available in OneOps
 
 For a list of platforms available in OneOps, go to the [Available Platforms List][]
+
 [admin]:{{site.baseurl}}/{{site.contexts.admin}}
 [developer]:{{site.baseurl}}/{{site.contexts.developer}}
 [user]:{{site.contexts.user}}

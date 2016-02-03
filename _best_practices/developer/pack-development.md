@@ -21,4 +21,4 @@ Some of the use case for variables would be:
   and  by the time the attribute is passed to the cookbook (workorder) it’s already substituted
 
 See also
- * [Variables] (/user/references/#variables)
+ * [Variables](/user/references/#variables)
