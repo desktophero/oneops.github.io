@@ -108,10 +108,10 @@ In this example, we will create simple application(Tomcat) which talks to back e
 4. Click **review** to your changes, all changes are buffered in a *release* and are not applied unless you commit.
 5. Once satisfied click **commit** to commit the changes . Next **[Create Environment](#create-an-environment)**
 
-```
+~~~
 * Change attributes of component which are common across environments.
 * Add optional components /attachments in design phase.
-```
+~~~
 See also:
 
 * [Platforms][]  

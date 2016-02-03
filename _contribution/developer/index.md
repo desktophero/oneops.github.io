@@ -1,6 +1,6 @@
 ---
 title: "Contribution"
-id: "contribution" 
+id: "contribution"
 ---
 
 Our code is publicly available in several repos at GitHub: https://github.com/oneops
@@ -10,10 +10,10 @@ We utilize **Github Issues** for issue tracking and contributions. You can contr
 1. Report an issue or make a feature request [here](#issues).
 2. Add features, fix bugs yourself, or contribute your code.
 
-<p>
+
 # Contributing Code or Documentation
 
-For small changes — little bugfixes, correcting typos, and the like — please just submit pull requests to any of our projects. 
+For small changes — little bug fixes, correcting typos, and the like — please just submit pull requests to any of our projects.
 For larger changes, though, we have to ask you to electronically sign a statement that indicates two things:
 
 1. You are willingly licensing your contributions under the terms of the open source license of the project that you’re contributing to.
@@ -32,7 +32,7 @@ Each Github pull request will go through 3 step before merge:
 
 1. We will execute our automated test cases against the pull request. If the tests failed the pull request will be rejected with comments provided on the failures.
 2. If tests pass, the OneOps engineering team member will do the review of the changes. Technical communication possible via github.com pull request page. When ready, your pull request will be tagged with label `Ready For Merge`.
-3. Your patch will be merged into `master` including necessary documentation updates and you will be included in `CHANGELOG.md`. 
+3. Your patch will be merged into `master` including necessary documentation updates and you will be included in `CHANGELOG.md`.
 
 
 # Apache 2.0 License
@@ -57,7 +57,7 @@ To decrease the back and forth in issues, and to help us get to the bottom of th
 
 <a name="issuetemplate"></a>
 
-```
+~~~
 
 ### Version:
 [Version of the project installed]
@@ -77,7 +77,7 @@ To decrease the back and forth in issues, and to help us get to the bottom of th
 ### Actual Result:
 [What actually happens after the reproduction steps?]
 
-```
+~~~
 
 ### Useful Github Queries
 

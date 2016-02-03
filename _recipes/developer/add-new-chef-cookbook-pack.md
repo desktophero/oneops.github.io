@@ -62,9 +62,9 @@ Now you are ready to test your cookbook and pack. You need to push your model (c
 
 5. We cache the metadata model in the UI so any metadata model changes must be followed by cache clear:
 
-    ```bash
+    ~~~bash
 $ curl http://cms.<your-server>.com:8080/transistor/rest/cache/md/clear
-```
+~~~
 
 6. Test the component configurations in the [OneOps GUI](https://web.dev.<your-server>.com/)   
 7. To make sure that your platform and cookbook are working.

@@ -15,7 +15,7 @@ For additional information about dstype, see <a href="{{site.contexts.admin}}ref
 
 The following is a sample monitor definition from Tomcat's pack:
 
-```ruby
+~~~ruby
 resource "tomcat",
   :cookbook => "tomcat",
   :design => true,
@@ -37,5 +37,5 @@ resource "tomcat",
                   }
                 },
        ...
-```
+~~~
 

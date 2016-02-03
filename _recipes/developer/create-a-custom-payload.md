@@ -14,7 +14,7 @@ Let's start with an sample payload that gets all the computes in an environment 
 2. Use the DependsOn relation to get to the manifest compute.
 3. To get the bom instances, use the base.RealizedAs relation.   
      
-    ```
+    ~~~
 'computes' => {
   'description' => 'computes', 
   'definition' => '{ 
@@ -41,7 +41,7 @@ Let's start with an sample payload that gets all the computes in an environment 
     ] 
   }'  
 }  
-```
+~~~
      
 4. Use the cms-admin tool which is part of the CMS to visualize / verify the relation names, directions, and class names.
 

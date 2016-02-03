@@ -105,17 +105,17 @@ up cloud and services The steps described to create an assembly,platform refers 
 
 # Vagrant up
 1. Install the required software for Vagrant
-
   1. [Virtal Box 5](https://www.virtualbox.org/).
   2. [Vagrant]("https://www.vagrantup.com/)
 
 2. Execute the following
 
- ``` bash
+~~~ bash
    git clone https://github.com/oneops/setup
    cd setup/vagrant
    vagrant up
-  ```
+~~~
+
 The setup does the following :
 
   * Installs all required software see [here](/admin/key-concepts/#oneops-system-architecture)
@@ -123,32 +123,34 @@ The setup does the following :
   * Clones, Builds and Deploys all the required components to run [OneOps](/admin/key-concepts/#oneops-system-architecture)
   * Bootstraps the  circuits from [circuit-oneops](https://github.com/oneops/circuit-oneops-1/)
 
-  ``` bash
+~~~ bash
+
 # After the successful install , you wills see this in console.
   ==> default: Done with admin
   ==> default: OneOps should be up on http://localhost:3000
   ==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
   ==> default: All done at : 15:28:54
-  ```
+~~~
 
 If step fails refer [troubleshooting](../testing).
 
 > UI should be up [here](http://localhost:9090/users/sign_in).
 
 # Set Up your Organization , Clouds, Cloud Services  
-   ## Refer [User] (../../user/getting-started/#create-cloud)
+   ## Refer [User](../../user/getting-started/#create-cloud)
    Or see screen cast below.
 
 # Set up [Inductor](../key-concepts#inductor)
 
 At this time, we are ready to set up inductor for newly created cloud.
 
+
 Inductor executes the **workoders/actionOrders** pushed by **controller** to
 cloud location specified at cloud creation. Refer [this](../references/#inductor) for overall flow.
 
 ## Log on to Vagrant Image
 
-``` bash
+~~~ bash
 vagrant ssh
 sudo su
 cd /opt/oneops/inductor
@@ -157,11 +159,11 @@ inductor create
 # Use /public/oneops/clouds/aws as location if you are choosing aws cloud.
 # The screen cast shows the inductor answers and setup for two of cloud providers
 # Refer https://github.com/oneops/setup#install
-```
+~~~
 ##Inductor directory Structure
 >The directory structure after you have created inductor successfully will look like this.
 
-``` bash
+~~~ bash
 cd /opt/oneops/inductor
 ├── circuit-oneops-1 -> /home/oneops/build/circuit-oneops-1 from (https://github.com/oneops/circuit-oneops-1)
 ├── clouds-available # All inductor which are created will go in this
@@ -184,13 +186,13 @@ cd /opt/oneops/inductor
 #After the successful creation of inductor you will see the following messages in logs
 
 2016-02-01 01:54:09,505  INFO   FailoverTransport:1065  Successfully connected to ssl://localhost:61617?keepAlive=true
-```
+~~~
 
 # Validate Set up
 
-    Create Assembly, Platforms and environment to test it out. Refer [User](./user/getting-started)
-    Or
-    See screen cast below (might work better on the full screen, we are working on improving this).
+Create Assembly, Platforms and environment to test it out. Refer [User](./user/getting-started)
+Or
+See screen cast below (might work better on the full screen, we are working on improving this).
 
 
 

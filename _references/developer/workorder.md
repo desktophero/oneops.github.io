@@ -11,16 +11,16 @@ A WorkOrder is sent from the controller to a message queue by zone. The inductor
 
 When the inductor is finished with a `WorkOrder`, it posts a `WorkorderResponse` event to the controller with a resultCi that updates the CMS.
 
-```http
+~~~http
 chef-solo -c /home/oneops/cookbooks/chef.rb -j /opt/oneops/workorder/<some workorder>.json
-```
+~~~
 
 <br/>
 Chef-solo uses the `run_list` in the WorkOrder to determine what code to run.
 
 The following is a sample compute:add WorkOrder json file:
 
-```json
+~~~json
 {
   "mgmt_domain": "qa.oneops.com",
   "customer_domain": "s3rss.test-php-mysql.oneops.com",
@@ -450,7 +450,7 @@ The following is a sample compute:add WorkOrder json file:
   "public_key": "na",
   "app_name": "compute"
 }
-```
+~~~
 
 # See Also
 

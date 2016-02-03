@@ -12,15 +12,15 @@ To upgrade an application version in an environment, follow these steps:
 5. Update the version:
 
   1. Version from variable:
-  
+
      1. Click the **variable** tab.
      2. Select the variable.
      3. Edit the variable.
      4. Save.
      5. Commit and deploy.
-    
+
   1. Version hard coded in the component:
-  
+
      1. Select the component from the right navigation.
      2. Click **Edit.**
      3. Update the <variable> value.
@@ -28,7 +28,6 @@ To upgrade an application version in an environment, follow these steps:
      5. Commit and deploy.
 
 >If the change is for all the environments it is better to do that in the design phase. If the change is environment-specific, update in transition phase and lock it.
-
 # See Also
 
 [Variables Override Prevention](#variables-override-prevention)

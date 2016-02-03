@@ -7,7 +7,7 @@ Assembly design is the high-level representation of your business application. T
 
 <video width="720" height="480" preload="metadata" controls="" class="grovo-video">
     <source src="http://videos.grovo.com/walmart-oneops-0215_add-an-assembly_4668.webm?vpv=1" type="video/webm">
-    Your browser does not implement HTML5 video. 
+    Your browser does not implement HTML5 video.
 </video>
 
 To add an assembly, follow these steps:
@@ -20,7 +20,7 @@ To add an assembly, follow these steps:
     This can be a distribution list, but it can only be a single email address.
 5. Optionally, select a Design from the drop-down list.
     To find a design, navigate the catalogs by clicking the arrows.
-    The available designs here in the list is also called as [Catalog] (#catalogs)
+    The available designs here in the list is also called as [Catalog](#catalogs)
 6. Click **Save.**
 
 ![](../../assets/local/images/assembly-new.png)

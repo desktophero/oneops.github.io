@@ -31,17 +31,17 @@ Download and install the latest gem from the build server or build yourself from
 
 advanced option to use object store backed images and docs, is to modify the circuit repos .chef/knife.rb with some object store config.  Example lines to add to circuit-oneops-1/.chef/knife.rb:
 
-```bash
+~~~bash
 object_store_provider 'OpenStack'
 object_store_user 'oneops'
 object_store_pass 'redacted'
 object_store_endpoint 
 environment_name 'int-1503'
-```
+~~~
 
 Then to perform the content upload, aka model sync:
 
-```bash
+~~~bash
 cd /opt/oneops
 circuit create
 cd circuit
@@ -50,4 +50,4 @@ circuit init
 cd /opt/oneops/circuit-oneops-1
 # this runs knife model sync, knife pack sync and knife cloud sync
 circuit install
-```
+~~~
