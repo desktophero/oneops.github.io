@@ -29,10 +29,10 @@ Record-Sets are assembled together in a single zone and will use any of two valu
 * Record type **`CNAME`** creates an Alias of another domain name 
 
 As a result the deployment has a DNS created with hostname mapping and domain alias if configured.
+
+For more details on DNS see: [Azure DNS]({{site.baseurl}}/{{site.contexts.user}}howto/#add-cname-in-azure-dns)  
  
  **Load Balancer**
- 
- The Load Balancer has many parts.  
  
  OneOps creates and configures following resources in resource group to create a load balancer:
 
@@ -50,11 +50,7 @@ Before creating a load balancer following steps are performed on Microsoft Azure
 -	An *Availability-Set* is generated and all your back-end servers belong to that availability-set
 -	And finally a *Load-Balancer* is set-up
 -	Next `n` Virtual Machines are provisioned to run your servers (where ‘n’ is the number of servers you want to Set-Up) and for each machine a NIC (network interface card) is built.
-
-
-`Note: All steps mentioned above are not sequential. The order might be different depending upon the back-end implementation of code.`
  
-
 **Traffic Manager**
 
 Before a traffic manager is created on Azure, it requires 
