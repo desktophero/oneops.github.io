@@ -90,18 +90,19 @@ up cloud and services The steps described to create an assembly,platform refers 
 
 
 ## Outline
- 1. Setup  Vagrant  [here](#vagrant-up)
-  2. Set up *clouds*. Refer screen cast  below and [user](../../user/getting-started/#create-cloud)   
-    1. Create Clouds
-    2. Create Cloud Services
-        1. Compute Cloud Service
-        2. DNS Cloud Service
-        3. GNS Cloud Service
-  3. Create [Inductors](#set-up-inductor) for clouds
-  4. Create Assembly
-          1. Create Platform
-          2. Create Environment
-          3. Deploy an Environment
+
+2. Setup Vagrant [here](#vagrant-up)
+1. Set up *clouds*. Refer screen cast  below . For more details refer   [user](../../user/getting-started/#create-cloud)
+   1. Create Clouds
+    1. Create Cloud Services
+       1. Compute Cloud Service
+       2. DNS Cloud Service
+       3. GNS Cloud Service
+  1. Create Assembly
+       1. Create Platform
+       2. Create Environment
+       3. Deploy an Environment
+   
 
 # Vagrant up
 1. Install the required software for Vagrant
@@ -140,9 +141,10 @@ If step fails refer [troubleshooting](../testing).
    ## Refer [User](../../user/getting-started/#create-cloud)
    Or see screen cast below.
 
-# Set up [Inductor](../key-concepts#inductor)
+# Check Inductor  [Inductor](../key-concepts#inductor)
 
-At this time, we are ready to set up inductor for newly created cloud.
+> This section is for informative purpose only, The vagrant image has pre-installed and configured inducor ready to 
+execute workorder. 
 
 
 Inductor executes the **workoders/actionOrders** pushed by **controller** to
@@ -154,14 +156,13 @@ cloud location specified at cloud creation. Refer [this](../references/#inductor
 vagrant ssh
 sudo su
 cd /opt/oneops/inductor
-inductor create
-# Answer the questions, pay attention to cloud location and secret key .
-# Use /public/oneops/clouds/aws as location if you are choosing aws cloud.
-# The screen cast shows the inductor answers and setup for two of cloud providers
-# Refer https://github.com/oneops/setup#install
+inductor status 
+indcutor tail 
+## should show inductor successfuly connected to amq. 
+
 ~~~
-##Inductor directory Structure
->The directory structure after you have created inductor successfully will look like this.
+## Inductor directory Structure
+>The directory structure after you have created inductor successfully will look like this, 
 
 ~~~ bash
 cd /opt/oneops/inductor
@@ -177,15 +178,12 @@ cd /opt/oneops/inductor
 ├── lib
 │   └── client.ts
 ├── log
-└── shared ## All shared cookbooks from (https://github.com/oneops/oneops-admin/tree/master/lib/shared)
+└── shared ## Refer (https://github.com/oneops/oneops-admin/tree/master/lib/shared)
     ├── cookbooks
     ├── exec-gems.yaml
     ├── exec-order.rb
     └── hiera.yaml
 
-#After the successful creation of inductor you will see the following messages in logs
-
-2016-02-01 01:54:09,505  INFO   FailoverTransport:1065  Successfully connected to ssl://localhost:61617?keepAlive=true
 ~~~
 
 # Validate Set up
@@ -195,8 +193,7 @@ Or
 See screen cast below (might work better on the full screen, we are working on improving this).
 
 
-
-<iframe src="https://player.vimeo.com/video/153733812" width="200 " height="253" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/154112203" width="200 " height="253" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 # Before You Begin
