@@ -19,7 +19,6 @@ The following diagram describes how Platforms, Components, and Instances relate 
 # Design in OneOps
 
 Design is an area within an [assembly][] where the application architecture is described. The application comprises  of [platforms][] containing optional or required [components][].
-</create-a-custom-payload.mdbr>
 
 * Applications can be:
   * Designed from scratch by adding [platforms][]
