@@ -74,7 +74,7 @@ This section describes how to set up your account, organization, assemblies.
 ![Getting started OneOps]({{site.baseurl}}/assets/local/images/create-clouds-orgs.gif)
 Next **Create Assembly**
 
-##Create an Assembly
+## Create an Assembly
 
 Assembly is workspace for you application. To create an assembly
 
@@ -98,13 +98,13 @@ To learn about additional Account activities for assemblies, teams, users and no
 In the design phase, one can create [platforms][](building blocks) from existing available *packs*.
 In this example, we will create simple application(Tomcat) which talks to back end database.
 
-##Create a Platform
+## Create a Platform
 
 1. Click design(icon) from left nav or top nav or wizard.
 2. Click **New Platform** , choose from existing packs in **pack name**
 3. Modify any attributes of *component* to suit your application design.
 
-##Commit a design
+## Commit a design
 4. Click **review** to your changes, all changes are buffered in a *release* and are not applied unless you commit.
 5. Once satisfied click **commit** to commit the changes . Next **[Create Environment](#create-an-environment)**
 
@@ -124,7 +124,7 @@ See also:
 # Transition Phase
 Transition is where you define environment specific attributes as needed. The dev or qa environments may differ in terms of *availability* , *resources* needed and can be defined at environment level.
 
-##Create an Environment
+## Create an Environment
 1. Click environment(icon) from left nav or top nav or wizard.
 2. Click **New Environment** .
 3. Select availability mode for your environment either at platform.
@@ -195,7 +195,7 @@ See also
 * [Control Environment](../howto/#control-environment)
 
 
-##Monitoring
+## Monitoring
 * OneOps by default will send emails(default notification mechanism) if any of components are in unhealthy or notify state. see [Monitoring][]
 * If auto-repair is enabled , OneOps will auto -repair the instance. The actions taken to recover an instance are prescribed by `repair recipe` of the component. For example , if Compute is alerting for missing *heartbeat* by default Computes repair action involves the following
   1. Check the ssh port  
