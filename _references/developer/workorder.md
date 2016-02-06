@@ -5,7 +5,7 @@ id: workorder
 
 A WorkOrder is a collection of managed objects that are used to add, update or delete a component.
 
-[ActionOrders]({{site.contexts.admin}}key-concepts/#actionorders) are actions such as start, stop, restart, status, repair, etc. 
+[ActionOrders][] are actions such as start, stop, restart, status, repair, etc.
 
 A WorkOrder is sent from the controller to a message queue by zone. The inductor consumes from the queue and executes the chef-solo command using the data from the WorkOrder. It runs locally or remotely via SSH using the `ManagedVia` relationship.
 
@@ -456,3 +456,4 @@ The following is a sample compute:add WorkOrder json file:
 
 * [Architecture Diagram](../key-concepts/#oneops-system-architecture)
 
+[ActionOrders]:{{site.baseurl}}/{{site.contexts.admin}}key-concepts/#actionorders

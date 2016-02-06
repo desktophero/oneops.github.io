@@ -58,5 +58,4 @@ recipe "repair", "Repair Apache"
 
 * [Component](../key-concepts/#component)
 * [Recipes](../key-concepts/#oneops-cookbooks-and-recipes)
-* <a href="{{ site.contexts.user }}references/#attachments" target="_blank">Attachments</a>
-
+* [Attachments]({{site.baseurl}}/{{ site.contexts.user }}references/#attachments)
