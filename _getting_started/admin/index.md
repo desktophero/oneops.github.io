@@ -107,7 +107,7 @@ up cloud and services The steps described to create an assembly,platform refers 
 # Vagrant up
 1. Install the required software for Vagrant.
    1. [Virtal Box 5](https://www.virtualbox.org/).
-   2. [Vagrant]("https://www.vagrantup.com/)
+   2. [Vagrant](https://www.vagrantup.com/)
 2. Execute the following
 
 ~~~ bash
