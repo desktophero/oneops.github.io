@@ -105,10 +105,9 @@ up cloud and services The steps described to create an assembly,platform refers 
    
 
 # Vagrant up
-1. Install the required software for Vagrant
-  1. [Virtal Box 5](https://www.virtualbox.org/).
-  2. [Vagrant]("https://www.vagrantup.com/)
-
+1. Install the required software for Vagrant.
+   1. [Virtal Box 5](https://www.virtualbox.org/).
+   2. [Vagrant]("https://www.vagrantup.com/)
 2. Execute the following
 
 ~~~ bash
@@ -138,8 +137,9 @@ If step fails refer [troubleshooting](../testing).
 > UI should be up [here](http://localhost:9090/users/sign_in).
 
 # Set Up your Organization , Clouds, Cloud Services  
-   ## Refer [User](../../user/getting-started/#create-cloud)
-   Or see screen cast below.
+ 
+* Refer [User](../../user/getting-started/#create-cloud) Or see screen cast below.
+   
 
 # Check Inductor  [Inductor](../key-concepts#inductor)
 
@@ -161,6 +161,7 @@ indcutor tail
 ## should show inductor successfuly connected to amq. 
 
 ~~~
+
 ## Inductor directory Structure
 >The directory structure after you have created inductor successfully will look like this, 
 
