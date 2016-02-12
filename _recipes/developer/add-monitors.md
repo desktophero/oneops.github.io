@@ -5,42 +5,45 @@ id: add-monitors
 
 Adding a monitor is specific to each component. These steps are very generic and only give an overview of what to do if a new monitor needs to be added to a component:
 
-1. Go to the packer where you want to add the monitor.
-  1. Let say we need to add the log monitor on resource. Since we already have check_logfiles script. We can use it.
+Go to the pack where you want to add the monitor.
 
-~~~python
+# Add a Monitors using existing script
+
+1. Let say we need to add the log monitor on resource. Since we already have check_logfiles script. We can use it.
+
+~~~ruby
 :monitors => {  
-      	'Log' => {:description => 'Log',
-            	:source => '',
-            	:chart => {'min' => 0, 'unit' => ''},
-            	:cmd => 'check_logfiles!logtomcat!#{cmd_options[:logfile]}!#{cmd_options[:warningpattern]}!#{cmd_options[:criticalpattern]}',
-            	:cmd_line => '/opt/nagios/libexec/check_logfiles   --noprotocol --tag=$ARG1$ --logfile=$ARG2$ --warningpattern="$ARG3$" --criticalpattern="$ARG4$"'
-            	:cmd_options => {
-                  	'logfile' => '/var/log/tomcat6/catalina.out',
-                  	'warningpattern' => 'WARNING',
-                  	'criticalpattern' => 'CRITICAL'
+    	'Log' => {:description => 'Log',
+          	:source => '',
+          	:chart => {'min' => 0, 'unit' => ''},
+          	:cmd => 'check_logfiles!logtomcat!#{cmd_options[:logfile]}!#{cmd_options[:warningpattern]}!#{cmd_options[:criticalpattern]}',
+          	:cmd_line => '/opt/nagios/libexec/check_logfiles   --noprotocol --tag=$ARG1$ --logfile=$ARG2$ --warningpattern="$ARG3$" --criticalpattern="$ARG4$"'
+          	:cmd_options => {
+                	'logfile' => '/var/log/tomcat6/catalina.out',
+                	'warningpattern' => 'WARNING',
+                	'criticalpattern' => 'CRITICAL'
 }, :metrics => {
-                 	'logtomcat_lines' => metric(:unit => 'lines', :description => 'Scanned Lines', :dstype => 'GAUGE'),
-                     'logtomcat_warnings' => metric(:unit => 'warnings', :description => 'Warnings', :dstype => 'GAUGE'),
-                 	'logtomcat_criticals' => metric(:unit => 'criticals', :description => 'Criticals', :dstype => 'GAUGE'),
-                 	'logtomcat_unknowns' => metric(:unit => 'unknowns', :description => 'Unknowns', :dstype => 'GAUGE')
+               	'logtomcat_lines' => metric(:unit => 'lines', :description => 'Scanned Lines', :dstype => 'GAUGE'),
+                   'logtomcat_warnings' => metric(:unit => 'warnings', :description => 'Warnings', :dstype => 'GAUGE'),
+               	'logtomcat_criticals' => metric(:unit => 'criticals', :description => 'Criticals', :dstype => 'GAUGE'),
+               	'logtomcat_unknowns' => metric(:unit => 'unknowns', :description => 'Unknowns', :dstype => 'GAUGE')
 }, :thresholds => {
-              	'CriticalLogException' => threshold('15m', 'avg', 'logtomcat_criticals', trigger('>=', 1, 15, 1), reset('<', 1, 15, 1)),
-             	}
-   	},          
+            	'CriticalLogException' => threshold('15m', 'avg', 'logtomcat_criticals', trigger('>=', 1, 15, 1), reset('<', 1, 15, 1)),
+           	}
+ 	},          
 }
 ~~~
 
-  2. To create a new monitor, a new script needs to be created. This script can be placed in the monitor cookbook, or if it's specific to the component in question, it can be placed under the component's own cookbook.<br/>
-      * `component --> cookbook ---> monitor --> files ---> default`<br/>
-      * `component --> cookbook ---> <specific-compoent> --> files ---> default`
+# Add a Monitors , Creating a new script.
+2. To create a new monitor, a new script needs to be created. This script can be placed in the **monitor** cookbook, or if it's specific to the component in question, it can be placed under the component's own cookbook.
+ refer [Monitoring Component](https://github.com/oneops/oneops-admin/tree/master/lib/shared/cookbooks/monitor/files/default)
 
-    For example:<br/>
+For adding to existing directories :
 
-1. Create Directories `“template/default”` in Zookeeper oneops pack in the zookeeper component and add your script file with the extension of `filename.extn.erb`
-2. Add the following code to your add.rb `"packer/components/cookbooks/zookeeper/recipes/add.rb"`. This is used to copy your `.erb` file in the `/opt/nagios/libexec` and nagios will read from there.
+3. Create Directories `“template/default”` in Zookeeper oneops pack in the zookeeper component and add your script file with the extension of `filename.extn.erb`
+4. Add the following code to your add.rb `"packer/components/cookbooks/zookeeper/recipes/add.rb"`. This is used to copy your `.erb` file in the `/opt/nagios/libexec` and nagios will read from there.
 
-~~~python
+~~~ruby
 template "/opt/nagios/libexec/check_zk.py" do
   source "check_zk.py.erb"
   mode 0755
