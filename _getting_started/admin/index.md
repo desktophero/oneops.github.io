@@ -125,7 +125,7 @@ The setup does the following :
 
 ~~~ bash
 
-# After the successful install , you wills see this in console.
+# After the successful install , you will see this in console.
   ==> default: Done with admin
   ==> default: OneOps should be up on http://localhost:3000
   ==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
