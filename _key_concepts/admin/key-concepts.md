@@ -27,10 +27,12 @@ The diagram below depicts a detailed system architecture .
 * Self service portal for managing **applications, clouds, organization,services**.
 * Rest based API's to do almost anything which can be done on UI.
 * Can be integrated with sign on from AD
+
 * [source](https://github.com/oneops/display)
 
 ## CLI
  Command line *ruby gem* for managing almost all aspects of OneOps.
+
  * [source](https://github.com/oneops/cli)
 
 ## User DB
@@ -38,10 +40,12 @@ The diagram below depicts a detailed system architecture .
 
 ## Packer/Circuit
 Its a ruby based gem which is responsible for loading packs.
+
 *  [source](https://github.com/oneops/oneops-admin)
 
 ## CMS API aka adapter
  Java based rest api to manage model, assemblies, environment.
+
 *  [source](https://github.com/oneops/adapter)
 
 ## Transistor
@@ -64,6 +68,7 @@ Antenna is responsible for persisiting/serving OneOps notifications into Cassand
 
 ### Configuration Management Database
 * System of records for all assemblies,enviroments,deployments.
+
 *  [source](https://github.com/oneops/db-schema)
 
 ## Transmitter (Publisher)
@@ -83,7 +88,8 @@ into elastic search which helps in implementing
 * Policy
 * Cost
 * Deployment/Release histories.
-source](https://github.com/oneops/search)
+
+*  [source](https://github.com/oneops/search)
 
 ## Message Bus
 OneOps uses apache active mq as messaging layer for internal  internal communication between components.
@@ -91,21 +97,23 @@ OneOps uses apache active mq as messaging layer for internal  internal communica
 ## Sensor
 Sensor consumes metrics coming from collector and generate events if thresholds violations are detected  and generate Ops events.
 [Esper](http://www.espertech.com/) based CEP to detect monitor thresholds violations
-[source](https://github.com/oneops/sensor)
 
-##Opamp
+*  [source](https://github.com/oneops/sensor)
+
+## Opamp
 Its an oneops **event processor** to trigger auto-healing, auto-replace,or generate notifications.
-[source](https://github.com/oneops/opamp)
 
-##Collector
+*  [source](https://github.com/oneops/opamp)
+
+## Collector
 Its a Logstash collector which **collect metrics** from managed instances in OneOps.
 
-[source](https://github.com/oneops/daq)
+*  [source](https://github.com/oneops/daq)
 
-##Controller
+## Controller
 Its an **activiti** based workflow engine responsible for *distributing* OneOps **work orders and action orders**.
 
-[source](https://github.com/oneops/controller)
+*  [source](https://github.com/oneops/controller)
 
 # Inductor
 The Inductor *consumes WorkOrders or ActionOrders* from a queue by zone, executes them and posts a *result* message back to the *controller*.
