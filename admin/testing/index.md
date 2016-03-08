@@ -13,6 +13,7 @@ permalink: admin/testing/
 {% if article.path contains context %}
 {% assign found_content = true %}
 {{ article.content }}
+{% include feedback.html %}
 {% endif %}
 {% endfor %}
 {% unless found_content %}
