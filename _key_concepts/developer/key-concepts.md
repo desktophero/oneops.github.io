@@ -136,7 +136,7 @@ The Relation Class defines which [Component](../#component) types that it can es
 A Platform is a collection of [components](#component) that are grouped for reusability.
 These are building blocks to create applications via the UI by adding platforms to an [assembly.](#assemblies-api)
 
-#Circuit
+# Circuit
 
 Circuit is a ruby application (packaged as gem) that loads Component Classes,Relation Classes and Platform Templates defined in pack files into the Configuration Management System(CMS) database.
 
