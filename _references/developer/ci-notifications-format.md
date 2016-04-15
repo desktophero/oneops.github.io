@@ -1,12 +1,12 @@
 ---
-title: CI notification format
-id: CI notification format
+title: CI Notification Format
+id: CI Notification Format
 ---
 
 OneOps broadcasts the CI notifications to all configured sinks as well as to email recipients configured.
 A CI notification json has a format like below sample:
 
-``` json
+~~~javascript
 {
     ts: "2016-01-01T15:51:42.183",
     cmsId: 1234,
@@ -14,14 +14,14 @@ A CI notification json has a format like below sample:
     severity: "warning",
     type: "ci",
     source: "ops",
-    subject: "as-tomcat-compute-ssh:SSH Up is violated.",
+    subject: "webapp-tomcat-compute-ssh:SSH Up is violated.",
     text: "compute-11031075-2 is in unhealthy state; Starting repair",
-    nsPath: "/Org/as/prod/bom/tomcat/1",
+    nsPath: "/OneOps/webapp/prod/bom/tomcat/1",
     payload: {
         total: "6",
         oldState: "good",
         unhealthy: "5",
-        eventName: "as-tomcat-compute-ssh",
+        eventName: "webapp-tomcat-compute-ssh",
         className: "bom.main.2.Compute",
         threshold: "SSH Up",
         state: "open",
@@ -36,7 +36,7 @@ A CI notification json has a format like below sample:
     adminStatus: "active",
     manifestCiId: 58108355
 }
-```
+~~~
 The new state of a ci (payload.newState) could be any of below :
 
 - notify
@@ -58,7 +58,7 @@ There will be a matching "close" notification event with the same {ciId + payloa
 
 Here is the sample for a matching close event for above open event:
 
-```json
+~~~javascript
 {
     ts: "2016-01-01T19:51:42.183",
     cmsId: 1234,
@@ -66,14 +66,14 @@ Here is the sample for a matching close event for above open event:
     severity: "info",
     type: "ci",
     source: "ops",
-    subject: "as-tomcat-compute-ssh:SSH Up recovered.",
+    subject: "webapp-tomcat-compute-ssh:SSH Up recovered.",
     text: "compute-11031075-2 is in good state.",
-    nsPath: "/Org/as/prod/bom/tomcat/1",
+    nsPath: "/OneOps/webapp/prod/bom/tomcat/1",
     payload: {
         total: "6",
         oldState: "unhealthy",
         unhealthy: "1",
-        eventName: "as-tomcat-compute-ssh",
+        eventName: "webapp-tomcat-compute-ssh",
         className: "bom.main.2.Compute",
         threshold: "SSH Up",
         state: "close",
@@ -88,4 +88,4 @@ Here is the sample for a matching close event for above open event:
     adminStatus: "active",
     manifestCiId: 2345
 }
-```
+~~~

@@ -1,6 +1,6 @@
 ---
-title: Override platform attributes
-id: Override platform attributes
+title: Override Platform Attributes
+id: Override Platform Attributes
 ---
 
 You can override the platform attributes like auto-replace or auto-scale at individual circuit (pack) level.
