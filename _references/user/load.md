@@ -10,7 +10,7 @@ id: "load"
 * **API** call for design load. For additional information see [Design API](../../developer/references/#design) reference.
 
 
-##Global Variables
+## Global Variables
 
 Variables that can be used anywhere in the design and are referenced via `$OO_GLOBAL{...}` syntax. For additional information on global variables see [variables](../references/#variables) reference page.
 
@@ -20,7 +20,7 @@ variables:
    MYGLOBALVAR2: "bar"
 ```
 
-##Platforms
+## Platforms
 
 Definition of platforms to be loaded inside the assembly design.
 
@@ -28,7 +28,7 @@ Definition of platforms to be loaded inside the assembly design.
 
 This section contains a list of all configuration options supported by a platform definition.
 
-###pack
+### pack
 
 A string in the form of `<source>/<name>:<version>` declaring the pack to be used for this platform. For additional information on packs see [platform packs](../references/#platform-packs).
 
@@ -36,7 +36,7 @@ A string in the form of `<source>/<name>:<version>` declaring the pack to be use
 pack: oneops/tomcat:1
 ```
 
-###major_version
+### major_version
 
 Major version of the platform. For new design this will usually be set to 1 and increased when a platform version upgrade is needed.
 
@@ -44,7 +44,7 @@ Major version of the platform. For new design this will usually be set to 1 and 
 major_version: '1'
 ```
 
-###links
+### links
 
 Links are used to describe dependencies between platforms. For additional information on links between platforms see [platform links](../references/#platform-links).
 
@@ -54,7 +54,7 @@ links:
    - mq
 ```
 
-###platform variables
+### platform variables
 
 Platform variables that can be used inside the specified platform in design and are referenced via `$OO_LOCAL{...}` syntax. For additional information on platform variables see [variables](../references/#variables) reference page.
 
@@ -64,7 +64,7 @@ variables:
   MYLOCALVAR2: "bar"
 ```
 
-##Components
+## Components
 
 Definition of components inside the platform.
 
@@ -79,9 +79,9 @@ artifact/Artifact:
     version: '1.0'
 ```
 
-##Attachments
+## Attachments
 
-'attachements' can be used in the same level as the component attributes to declare component attachments.
+'attachments' can be used in the same level as the component attributes to declare component attachments.
 
 ```
 attachments:
@@ -95,7 +95,7 @@ attachments:
     run_on: before-add,before-replace,before-update
 ```
 
-##Example yaml file
+## Example yaml file
 
 ```
 variables:
