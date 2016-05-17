@@ -7,7 +7,7 @@ Use this section to set up your environment for OneOps pack (circuits)/cookbook 
 
 # Prerequisite
 
-For both API and Circuit development you need access to a running OneOps deployment. To build your own deployment, start with the <a href="{{site.baseurl}}/{{ site.contexts.admin }}/getting-started/#installation" target="_blank">OneOps Admin Getting Started</a>.
+For both API and Circuit development you need access to a running OneOps deployment. To build your own deployment, start with the [OneOps Admin Getting Started](/admin/getting-started/#installation) section.
 
 # API Developer
 
@@ -21,7 +21,7 @@ For Circuit development, follow the instructions below.
 
 There is two installation options.  
 
-* (Recommended) Use a pre-configured Vagrant image, described in the <a href="{{site.baseurl}}/{{ site.contexts.admin }}getting-started/" target="_blank">OneOps Admin Getting Started </a> section
+* (Recommended) Use a pre-configured Vagrant image, described in the [OneOps Admin Getting Started](/admin/getting-started/#installation) section
 * [Manually build from source]({{site.baseurl}}/{{ site.contexts.developer }}howto/#manually-build-from-source)
 
 # Setup and Configuration
