@@ -16,4 +16,4 @@ implications especially in production environments.
 # Debugging
 * For detailed debugging to show in the logs, turn on *debug* flag
 on the environment page to see detailed logging.
-* For debugging, you can capture the ~~~chef-solo~~~ command and execute on remote vm or inductor vm.
+* For debugging, you can capture the `chef-solo` command and execute on remote vm or inductor vm.
