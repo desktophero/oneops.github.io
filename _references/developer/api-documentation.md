@@ -3,6 +3,8 @@ title: OneOps API Documentation
 id: oneops-api-documentation
 ---
 
+Note: all calls will use the api token - see [Get Auth Token](#account-profile): 
+
 - [Top Level](#top-level)
 	- [GET list of manifest (transition) Lb components](#get-list-of-manifest-transition-lb-components)
 	- [GET a list of bom (operations) Lb components](#get-a-list-of-bom-operations-lb-components)
@@ -75,19 +77,20 @@ id: oneops-api-documentation
 
 # Account Profile
 
-## GET Auth Token
+## GET Auth Token via UI in your browswer (not via curl or api)
+
 `https://<your-server>/account/profile#authentication`
 
-Sample curl:
+Sample curl using the auth-token:
 
-~~~sh
-curl -i -u <AUTH-TOKEN>: -H "Content-Type:application/json" -H "Accept:application/json" -X GET -k -3 -v https://<your-server>/platform/assemblies 
-~~~
-
-## GET all organizations
-`https://<your-server>/account/organizations.json`
+```sh
+curl -i -u <AUTH-TOKEN>: -H "Content-Type:application/json" -H "Accept:application/json" -X GET -v https://<your-server>/account/organizations
+```
 
 # Organization
+
+## GET all organizations
+`https://<your-server>/account/organizations`
 
 ## GET clouds
 `https://<your-server>/<ORGANIZATION-NAME>/clouds`
