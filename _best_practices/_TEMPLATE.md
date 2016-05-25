@@ -10,11 +10,11 @@ id: "best-practice-title"
 
 REPLACE WITH a summary paragraph of the recommended practice.
 
-```python
+~~~python
     """
     REPLACE WITH A code snippet, if required, that illustrates the recommended practice. Change the name of the language if needed. DELETE entire section if not required.
     """
-```
+~~~
 
 # Discussion 
 

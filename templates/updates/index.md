@@ -1,6 +1,6 @@
 ---
-title: "Updates" 
-author: "virtualtraveler"
+title: "Updates"
+
 permalink: /:path/
 ---
 
@@ -33,6 +33,6 @@ permalink: /:path/
 </article>
 {% endif %}
 {% endfor %}
-{% unless content_found %}
+{% unless found_content %}
 {% include empty-article.html %}
 {% endunless %}

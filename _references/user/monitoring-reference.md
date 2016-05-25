@@ -35,8 +35,8 @@ The operation view provides the trending of metric values along with the health 
 
 * Every component can be monitored
 * Out of the box, OneOps monitors the most important Components.
-* Users can set up [Threshold] (#threshold-definitions) on monitors to [scale,] (#auto-scale) [repair](#auto-repair) or [notify.](../howto/#set-up-notifications)
+* Users can set up [Threshold](#threshold-definitions) on monitors to [scale,](#auto-scale) [repair](#auto-repair) or [notify.](../howto/#set-up-notifications)
 
-There is a predefined set of default [Thresholds] (#threshold-definitions) that is provided by OneOps which comes implicitly with any environment deployment. The app owner has the flexibility to add a new threshold definition that is suitable for the app or to edit an existing [threshold] (#threshold-definitions).
+There is a predefined set of default [Thresholds](#threshold-definitions) that is provided by OneOps which comes implicitly with any environment deployment. The app owner has the flexibility to add a new threshold definition that is suitable for the app or to edit an existing [threshold](#threshold-definitions).
 
 To review, add, or edit a threshold, go to your environment in the transition phase, select the specific component (e.g. compute/tomcat). Get more details on <a href="{{site.baseurl}}/{{site.contexts.developer}}references/#default-monitor-thresholds" target="_blank">Default Monitor Thresholds</a>

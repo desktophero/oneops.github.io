@@ -117,10 +117,10 @@ First fetch the new service body content using:
 
 Then:
 
-```
+~~~
 POST: https://<your-server>/<ORGANIZATION-NAME>/clouds/<CLOUD-NAME>/services/
 Body: Take the response from new call and update all necessary fields/attributes to create body
-```
+~~~
 
 ## PUT Update to Service
 
@@ -130,10 +130,10 @@ First fetch the new service body content using:
 
 Then:
 
-```
+~~~
 PUT https://<your-server>/<ORGANIZATION-NAME>/clouds/<CLOUD-NAME>/services/<SERVICE-NAME>
 Body: Take the response from get call and update all necessary fields/attributes to create body
-```
+~~~
 
 ## GET Compute report
 
@@ -161,7 +161,7 @@ The response has two major sections:
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies`
 
-```
+~~~
 Body:
 
 {
@@ -174,7 +174,7 @@ Body:
         }
     }
 }
-```
+~~~
 
 ## PUT an updated assembly
 
@@ -198,7 +198,7 @@ TBD
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/design/platforms`
 
-```
+~~~
 Body:
 {
     "cms_dj_ci": {
@@ -213,14 +213,14 @@ Body:
         }
     }
 }
-```
+~~~
 
 ## PUT and updated design component attribute
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/design/platforms/<PLATFORM-NAME>/components`
 
 
-```
+~~~
 Body:
 
 {
@@ -243,7 +243,7 @@ Body:
         }
     }
 }
-```
+~~~
 
 > Attributes of component are very specific to each component.
 
@@ -252,7 +252,7 @@ Body:
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/design/platforms/<PLATFORM-NAME>/variables`
 
 
-```
+~~~
 Body:
 {
     "cms_dj_ci": {
@@ -270,7 +270,7 @@ Body:
         }
     }
 }
-```
+~~~
 
 ## DELETE a Platform
 
@@ -286,7 +286,7 @@ Body:
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/transition/<ENVIRONMENT-NAME>`
 
-```
+~~~
 Body:
 
 {
@@ -313,7 +313,7 @@ Body:
         }
     }
 }
-```
+~~~
 __Priority list:__
 
 - 1 => primary
@@ -338,7 +338,7 @@ __Priority list:__
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/transition/<ENVIRONMENT-NAME>/deployments/`
 
-```
+~~~
 Body:
 
 {
@@ -347,7 +347,7 @@ Body:
         "nsPath": "/<ORGANIZATION-NAME>/<ASSEMBLY-NAME>/<ENVIRONMENT-NAME>/bom"
     }
 }
-```
+~~~
 
 ## GET deployment status
 
@@ -375,11 +375,11 @@ https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/transition/
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/operations/environments/<ENV_NAME>/platforms/<PLATFORM-NAME>/components/<COMPONENT-NAME>/instances/<INSTANCE_ID>/state`	
 
-```
+~~~
 Body:
 
 { "state" : "replace" }
-```
+~~~
 
 ## GET All available actions
 
@@ -393,7 +393,7 @@ Body:
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<Assembly-name>/operations/environments/<Env-name>/platforms/<Platform-name>/procedures/`
 
-```
+~~~
 Body:
 
 {
@@ -404,11 +404,11 @@ Body:
         "procedureState": "active"
     }
 }
-```
+~~~
 
 For example:
 
-```
+~~~
 {
     "cms_procedure": {
         "procedureCiId": "0",
@@ -417,7 +417,7 @@ For example:
         "procedureState": "active"
     }
 }
-```
+~~~
 
 ## GET status
 

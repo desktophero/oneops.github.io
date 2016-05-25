@@ -1,6 +1,6 @@
 ---
 title: "Testing & Debugging"
-author: "virtualtraveler"
+
 permalink: /user/testing/
 ---
 
@@ -13,6 +13,7 @@ permalink: /user/testing/
 {% if article.path contains context %}
 {% assign found_content = true %}
 {{ article.content }}
+{% include feedback.html %} 
 {% endif %}
 {% endfor %}
 {% unless found_content %}

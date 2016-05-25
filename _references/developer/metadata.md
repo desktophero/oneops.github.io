@@ -12,7 +12,7 @@ Metadata files model components and have several parts:
 
 The following is an example of a metadata file:
 
-```ruby
+~~~ruby
 # 1: base/required attributes
 name             "Apache"
 description      "Installs/Configures Apache"
@@ -52,11 +52,10 @@ recipe "start", "Start Apache"
 recipe "stop", "Stop Apache"
 recipe "restart", "Restart Apache"
 recipe "repair", "Repair Apache"
-```
+~~~
 
 # See Also
 
 * [Component](../key-concepts/#component)
 * [Recipes](../key-concepts/#oneops-cookbooks-and-recipes)
-* <a href="{{ site.contexts.user }}references/#attachments" target="_blank">Attachments</a>
-
+* [Attachments]({{site.baseurl}}/{{ site.contexts.user }}references/#attachments)

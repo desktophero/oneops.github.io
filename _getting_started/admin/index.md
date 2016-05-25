@@ -10,29 +10,29 @@ To get started with OneOps installation , you can start with
 
 # Getting Started with OneOps public AMI
 
-If you have a AWS account you can bring up a basic version of OneOps using public AMI. (Right now available in US east region). This image have some basic configuration already in place.
+If you have an AWS account you can bring up a basic version of OneOps using the public AMI. (Right now it's available in US east region). This image has some basic configurations already in place.
 
 
 ## Find OneOps public image
 
-On your EC2 Dashboard make sure you have selected N.Virginia region
-In IMAGES/AMIs tab, make sure you select "Public images" in the drop down and search for OneOps. The image with name OneOps-basic-preconf-v1.* is the right one (pick the latest version).
+On your EC2 Dashboard make sure you have selected the N.Virginia region
+in the IMAGES/AMIs tab, and make sure you select "Public images" in the drop down and search for OneOps. The image with the name OneOps-basic-preconf-v1.* is the right one (pick the latest version).
 
 ## Launch your instance
-1. Select the OneOps AMI and hit Launch. </br>
-2. On the "Instance Type" tab make sure you select m4.large or bigger, OneOps needs at least 8GB of RAM. </br>
-3. On the "Instance Details" is usually ap to you but if you want to have a public ip enable Auto-assign Public IP. </br>
-4. On the "Add storage tab" make sure you have 2 volumes. </br>
-Name you instance </br>
-5. On the "Security group" add rule to open port 3000. OneOps UI is an rails app and runs on this image in development mode so you can check logs and see what's going on under the hood.</br>
-6. Review and launch. When instance comes up, in your browser hit url http://your-public-ip:300
+1. On the `Choose AMI` tab select the OneOps AMI and hit Launch. </br>
+2. On the `Instance Type` tab make sure you select m4.large or bigger. OneOps needs at least 8GB of RAM. </br>
+3. On the `Instance Details` tab if you want a public IP enable Auto-assign Public IP. </br>
+4. On the `Add Storage` tab make sure you have 2 volumes. </br>
+5. On the `Tag Instance` tab name your instance </br>
+6. On the `Configure Security Group` tab a add rule to open port 3000. OneOps UI is a Rails app and runs on this port in development mode so you can check logs and see what's going on under the hood.</br>
+7. On the `Review` tab hit launch. When the instance comes up, in your browser go to http://your-public-ip:3000
 </br>
 If login page comes up you are ready to go, login as oneops/oneops
 If not - check the [troubleshooting](#troubleshooting) section.
 
 ## Login into OneOps
-The AMI have preregistered user *oneops/oneops* within organization "OneOps". Also we have created simple assembly called **SimpleApache**. You can start browsing around. </br>
-But if you want to deploy this test assembly to EC2 cloud you need to provide your credentials
+The AMI has a preregistered user *oneops/oneops* within the organization `OneOps`. We have also created simple assembly called **SimpleApache**. You can start browsing around. </br>
+But if you want to deploy this test assembly to EC2 cloud you need to provide your credentials.
 
 ##	Configure Cloud
 
@@ -47,7 +47,7 @@ On the right hand side you will see the list of services this cloud provides. </
 
 
 For each one of them you will have to provide your access key and secret key.
-* Make sure this user has appropriate permissions to manage cloud services (EC2,route53 as the case may be)
+* Make sure this user has the appropriate permissions to manage cloud services (EC2, Route53 as the case may be)
 
 Yes you will have to do it for each one of them which is pain, but what if you want to use services from different providers :-)
 
@@ -57,10 +57,11 @@ Yes you will have to do it for each one of them which is pain, but what if you w
 
 ## Deploy Simple Assembly
 
-We have pre-created simple assembly named *SimpleApache*. This assembly have just one Apache platform with all out of the box default configuration values. You can examine it by clicking Assemblies (left nav) and then on SimpleApache. This will take you to the Assembly summary page which will have pretty much nothing since no activity was performed on this assembly. Click on "Design" (left nav) and you will get to the Assembly Design page where you can review platforms your assembly composed of (just one in this case) and if you click on the platform you will get onto "Platform Design Page". Just browse around.
+We have pre-created a simple assembly named *SimpleApache*. This assembly has just one Apache platform with all 
+out-of-the-box default configuration values. You can examine it by clicking Assemblies (left nav) and then on SimpleApache. This will take you to the Assembly summary page which will have nothing since no activity has been performed on this assembly yet. Click on "Design" (left nav) and you will get to the Assembly Design page where you can review platforms your assembly is composed of (just one in this case). If you click on the platform you will get to the "Platform Design Page". Just browse around.
 Next step is to try to deploy this simple assembly: </br>
 
-Go to "transition" page (left nav). You will see there is one environment already pre-created - "test-env", click on it and get onto Environment detail page. There is same one platform here as it was in design, but it's in disabled state, in order to deploy it you need to enable it. In little drop down menu you can do this.
+Go to "transition" page (left nav). You will see there is one environment already pre-created call `test-env`. Click on it and get to the Environment detail page. There is same one platform here as it was in design, but it's in the disabled state, in order to deploy it you need to enable it. In little drop down menu you can do this.
 
 ![](../../assets/local/images/GettingStartedEC2EnablePlatform.png)
 
@@ -72,76 +73,129 @@ The system will generate the deployment plan with steps that will be executed. R
 
 ![](../../assets/local/images/GettingStartedEC2Deploy.png)
 
-While deployment is in progress you can click on the steps to expand to work orders (one step can have multiple work orders). And there you can click on the log link to see what's going under the hood.Once deployment is complete you can go to operations page and examine what you have there. Also check your ec2 dashboard to see the result.
+While the deployment is in progress you can click on the steps to expand to work orders (one step can have multiple work orders). Here you can click on the log link to see what's going under the hood. Once the deployment is complete you can go to the operations page and examine what you have there. Also check your EC2 dashboard to see the result.
 
-See Also
+##Troubleshooting
 
- * [Trouble connecting to port 3000](../testing#ui-does-not-come-up-on-aws-image)
- * [Deployment fails ](../testing#deployment-fails-on-aws-image)
+ * [Trouble connecting to port 3000](../testing#ui-does-not-come-up)
+ * [Deployment fails ](../testing#deployment-fails)
+ * Not here , look [here](../testing)
  * We can help :<span class="button icon-slack"><a href="{{ site.slack_url }}" target="_blank">{{ site.slack_channel }}</a></span>
 
 
-To get your first instance of OneOps working, a Vagrant [setup](
-https://github.com/oneops/setup) is provided.
-
 # Installing Vagrant Image
-## Check Out the Vagrant Project
+Install OneOps using vagrant from [here](https://github.com/oneops/setup)
 
-```bash
-$ git clone https://github.com/oneops/setup
-$ cd setup/vagrant
-$ vagrant up
-```
-
-Once Jenkins starts, you can monitor the building process on : <a href="http://localhost:3003" target="_blank">http://localhost:3003</a>
-
-![](../../assets/local/images/vagrant-build-progress.png)
-
-# Setup and Configuration
-
-Once the build is complete, the following message appears:
-
-```bash
-==> default: Done with admin
-==> default: OneOps should be up on http://localhost:3000
-==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
-==> default: All done at : 15:28:54
-```
-# Set up Vagrant Inductor
-Refer [Install](https://github.com/oneops/setup#install)
-
-To continue the setup, connect to <a href="http://localhost:9090" target="_blank">http://localhost:9090.</a>
-
-Create your first user by going through the registration process.
-
-![](../../assets/local/images/admin-first-registration.png)
-
-After the registration process is complete, log in with the new user you created.
+>Note : As an **admin** you will be responsible for primarily installing OneOps in your **organization** or also responsible for setting
+up cloud and services The steps described to create an assembly,platform refers to [User](/../../user) section.
 
 
-You are now in OneOps.
+## Outline
 
-## Create Cloud Provider
+2. Setup Vagrant [here](#vagrant-up)
+1. Set up *clouds*. Refer screen cast  below . For more details refer   [user](../../user/getting-started/#create-cloud)
+   1. Create Clouds
+    1. Create Cloud Services
+       1. Compute Cloud Service
+       2. DNS Cloud Service
+       3. GNS Cloud Service
+  1. Create Assembly
+       1. Create Platform
+       2. Create Environment
+       3. Deploy an Environment
+   
 
-Before you can deploy and manage applications using OneOps, you have to add a Cloud Provider.
+# Vagrant up
+1. Install the required software for Vagrant.
+   1. [Virtal Box 5](https://www.virtualbox.org/).
+   2. [Vagrant](https://www.vagrantup.com/)
+2. Execute the following
 
-## Create an Organization
+~~~ bash
+   git clone https://github.com/oneops/setup
+   cd setup/vagrant
+   vagrant up
+~~~
 
-![](../../assets/local/images/admin-first-screen.png)
+The setup does the following :
 
-Create the first organization.
+  * Installs all required software see [here](/admin/key-concepts/#oneops-system-architecture)
+  * Sets up minimal data set required for OneOps to work.
+  * Clones, Builds and Deploys all the required components to run [OneOps](/admin/key-concepts/#oneops-system-architecture)
+  * Bootstraps the  circuits from [circuit-oneops](https://github.com/oneops/circuit-oneops-1/)
 
-![](../../assets/local/images/admin-create-organization.png)
+~~~ bash
 
-## Add a Cloud
+# After the successful install , you wills see this in console.
+  ==> default: Done with admin
+  ==> default: OneOps should be up on http://localhost:3000
+  ==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
+  ==> default: All done at : 15:28:54
+~~~
+
+If step fails refer [troubleshooting](../testing).
+
+> UI should be up [here](http://localhost:9090/users/sign_in).
+
+# Set Up your Organization , Clouds, Cloud Services  
+ 
+* Refer [User](../../user/getting-started/#create-cloud) Or see screen cast below.
+   
+
+# Check Inductor  [Inductor](../key-concepts#inductor)
+
+> This section is for informative purpose only, The vagrant image has pre-installed and configured inducor ready to 
+execute workorder. 
 
 
-To add a cloud, refer to the following:
+Inductor executes the **workoders/actionOrders** pushed by **controller** to
+cloud location specified at cloud creation. Refer [this](../references/#inductor) for overall flow.
 
-![](../../assets/local/images/admin-add-cloud.png)
-![](../../assets/local/images/admin-create-cloud.png)
-![](../../assets/local/images/admin-cloud-created.png)
+## Log on to Vagrant Image
 
+~~~ bash
+vagrant ssh
+sudo su
+cd /opt/oneops/inductor
+inductor status 
+indcutor tail 
+## should show inductor successfuly connected to amq. 
+
+~~~
+
+## Inductor directory Structure
+>The directory structure after you have created inductor successfully will look like this, 
+
+~~~ bash
+cd /opt/oneops/inductor
+├── circuit-oneops-1 -> /home/oneops/build/circuit-oneops-1 from (https://github.com/oneops/circuit-oneops-1)
+├── clouds-available # All inductor which are created will go in this
+│   └── public.oneops.clouds.aws
+├── clouds-enabled
+│   └── public.oneops.clouds.aws -> ../clouds-available/public.oneops.clouds.aws
+├── Gemfile
+├── Gemfile.lock
+├── init.d
+│   └── inductor
+├── lib
+│   └── client.ts
+├── log
+└── shared ## Refer (https://github.com/oneops/oneops-admin/tree/master/lib/shared)
+    ├── cookbooks
+    ├── exec-gems.yaml
+    ├── exec-order.rb
+    └── hiera.yaml
+
+~~~
+
+# Validate Set up
+
+Create Assembly, Platforms and environment to test it out. Refer [User](./user/getting-started)
+Or
+See screen cast below (might work better on the full screen, we are working on improving this).
+
+
+<iframe src="https://player.vimeo.com/video/154112203" width="200 " height="253" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 # Before You Begin

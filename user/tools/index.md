@@ -1,6 +1,6 @@
 ---
 title: "Tools"
-author: "virtualtraveler"
+
 permalink: user/tools/
 ---
 

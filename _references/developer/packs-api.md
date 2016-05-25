@@ -6,12 +6,12 @@ id: packs-api
 
 Get a list of packs available for this organization.
 
-```http
+~~~http
 GET /packs
-```
+~~~
 
 ## Response
 
-```ruby
+~~~ruby
 <%= headers 200 %> <%= json(:packs) { |h| [h] } %>
-```
+~~~

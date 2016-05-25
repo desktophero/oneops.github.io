@@ -9,18 +9,18 @@ To add attributes to a connector element or change the default value of a connec
 
 1. Go to the Tomcat configuration in your design.
 2. Change the protocol to what is appropriate for your application or port. (Normally you would do this in design.) The default value is the same as the Tomcat default which is `'HTTP/1.1'`.
-  
+
     |Key 'HTTP/1.1'                 | Value 'HTTP/1.1'                            |
 |-------------------------------|---------------------------------------------|
 |Blocking Java connector        |   org.apache.coyote.http11.Http11Protocol   |
 |Non blocking Java connector    |   org.apache.coyote.http11.Http11NioProtocol|
 |The APR/native connector       |   org.apache.coyote.http11.Http11AprProtocol|
-  
+
     ![Security Group](../../assets/local/images/tomcat-attributes.png)
-    
+
 3. Change the attributes that require tuning by using **Additional attributes needed for connector config.***
-  
-  ```xml
+
+~~~xml
    <!-- A "Connector" represents an endpoint by which requests are received
          and responses are returned. Documentation at :
          Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
@@ -34,8 +34,8 @@ To add attributes to a connector element or change the default value of a connec
                protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443"
-             <!--  "All additional Attributes go here eg below"	-->
               maxKeepAliveRequests="100"
+               <!--  All additional Attributes go here eg below	-->
                />
 
     <!-- Define a SSL HTTP/1.1 Connector on port 8443
@@ -51,9 +51,9 @@ keystoreFile="/app/certs/keystore.jks"
 keystorePass="changeit"
 scheme="https" secure="true"
 clientAuth="false"  sslProtocol="TLSv1" sslEnabledProtocols="TLSv1,TLSv1.1,TLSv1.2"
- "All additional Attributes go here"
-{code}
-```
+ <!--  All additional Attributes go here eg below	-->
+ />
+~~~
 
 >Currently you can not add multiple connectors to Tomcat. It is important to test performance on these settings in the lower environment before you do it in production.
 
@@ -63,4 +63,3 @@ The SSL connector is only configured if you have KeyStore and certificate option
 
 * [Add Certs to Compute to Enable SSL](../howto/#add-certs-to-compute-to-enable-ssl)
 * [catalina-out in Tomcat](../references/#catalina-out-in-tomcat)
-

@@ -11,5 +11,6 @@ permalink: developer/
 {% for article in site.overview %}
 {% if article.path contains context %}
 {{ article.content }}
+{% include feedback.html %}
 {% endif %}
 {% endfor %}

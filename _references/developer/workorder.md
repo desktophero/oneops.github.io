@@ -5,22 +5,22 @@ id: workorder
 
 A WorkOrder is a collection of managed objects that are used to add, update or delete a component.
 
-[ActionOrders]({{site.contexts.admin}}key-concepts/#actionorders) are actions such as start, stop, restart, status, repair, etc. 
+[ActionOrders][] are actions such as start, stop, restart, status, repair, etc.
 
 A WorkOrder is sent from the controller to a message queue by zone. The inductor consumes from the queue and executes the chef-solo command using the data from the WorkOrder. It runs locally or remotely via SSH using the `ManagedVia` relationship.
 
 When the inductor is finished with a `WorkOrder`, it posts a `WorkorderResponse` event to the controller with a resultCi that updates the CMS.
 
-```http
+~~~http
 chef-solo -c /home/oneops/cookbooks/chef.rb -j /opt/oneops/workorder/<some workorder>.json
-```
+~~~
 
 <br/>
 Chef-solo uses the `run_list` in the WorkOrder to determine what code to run.
 
 The following is a sample compute:add WorkOrder json file:
 
-```json
+~~~json
 {
   "mgmt_domain": "qa.oneops.com",
   "customer_domain": "s3rss.test-php-mysql.oneops.com",
@@ -450,9 +450,10 @@ The following is a sample compute:add WorkOrder json file:
   "public_key": "na",
   "app_name": "compute"
 }
-```
+~~~
 
 # See Also
 
 * [Architecture Diagram](../key-concepts/#oneops-system-architecture)
 
+[ActionOrders]:{{site.baseurl}}/{{site.contexts.admin}}key-concepts/#actionorders

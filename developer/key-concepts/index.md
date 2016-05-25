@@ -12,6 +12,7 @@ permalink: developer/key-concepts/
 {% if key_concept.path contains context %}
 {% assign found_content = true %}
 {{ key_concept.content }}
+{% include feedback.html %}
 {% endif %}
 {% endfor %}
 {% unless found_content %}

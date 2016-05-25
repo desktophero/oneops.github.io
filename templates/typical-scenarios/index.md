@@ -1,6 +1,6 @@
 ---
 title: "Typical Usage Scenarios"
-author: "virtualtraveler"
+
 permalink: /:path/
 ---
 

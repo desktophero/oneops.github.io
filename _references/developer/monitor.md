@@ -11,11 +11,11 @@ An optional monitor within a Pack Component Resource contains:
 * Metrics: name, unit, desc, dstype
 * Thresholds: When to trigger events
 
-For additional information about dstype, see <a href="{{site.contexts.admin}}references/#metric-data-source-type" target="_blank">Metric Data Source Type</a> in the OneOps Admin Documentation.
+For additional information about dstype, see [Metric Data Source Type][] in the OneOps Admin Documentation.
 
 The following is a sample monitor definition from Tomcat's pack:
 
-```ruby
+~~~ruby
 resource "tomcat",
   :cookbook => "tomcat",
   :design => true,
@@ -37,5 +37,6 @@ resource "tomcat",
                   }
                 },
        ...
-```
+~~~
 
+[Metric Data Source Type]:{{site.baseurl}}/{{site.contexts.admin}}references/#metric-data-source-type

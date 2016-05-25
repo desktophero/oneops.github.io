@@ -1,6 +1,5 @@
 ---
 title: "Tools"
-author: "virtualtraveler"
 permalink: admin/tools/
 ---
 
