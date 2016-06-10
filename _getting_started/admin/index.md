@@ -75,7 +75,7 @@ The system will generate the deployment plan with steps that will be executed. R
 
 While the deployment is in progress you can click on the steps to expand to work orders (one step can have multiple work orders). Here you can click on the log link to see what's going under the hood. Once the deployment is complete you can go to the operations page and examine what you have there. Also check your EC2 dashboard to see the result.
 
-##Troubleshooting
+## Troubleshooting
 
  * [Trouble connecting to port 3000](../testing#ui-does-not-come-up)
  * [Deployment fails ](../testing#deployment-fails)
