@@ -389,9 +389,9 @@ Body:
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/operations/environments/<ENV_NAME>/platforms/<PLATFORM-NAME>/components/<COMPONENT-NAME>/instances?instances_state=all`
 
-## PUT Request to execute action
+## POST Request to execute action
 
-`https://<your-server>/<ORGANIZATION-NAME>/assemblies/<Assembly-name>/operations/environments/<Env-name>/platforms/<Platform-name>/procedures/`
+`https://<your-server>/<ORGANIZATION-NAME>/operations/procedures/`
 
 ~~~
 Body:
@@ -399,9 +399,10 @@ Body:
 {
     "cms_procedure": {
         "procedureCiId": "0",
-        "definition": "{"flow":[{"targetIds":["<Instance_id>"],"relationName":"base.RealizedAs","direction":"from","actions":[{"actionName":"<Action-name>","stepNumber":1,"isCritical":true}]}],"name":"<Action-name>"}",
+        "procedureName": "<Name>",
         "ciId": "<Component_id>",
-        "procedureState": "active"
+        "procedureState": "active",
+        "definition": "{"flow":[{"targetIds":["<Instance_id>"],"relationName":"base.RealizedAs","direction":"from","actions":[{"actionName":"<Action-name>","stepNumber":1,"isCritical":true}]}],"name":"<Action-name>"}"
     }
 }
 ~~~
@@ -412,9 +413,10 @@ For example:
 {
     "cms_procedure": {
         "procedureCiId": "0",
-        "definition": "{"flow":[{"targetIds":["9277720"],"relationName":"base.RealizedAs","direction":"from","actions":[{"actionName":"reboot","stepNumber":1,"isCritical":true}]}],"name":"reboot"}",
+        "procedureName": "reboot",
         "ciId": "9277281",
         "procedureState": "active"
+        "definition": "{"flow":[{"targetIds":["9277720"],"relationName":"base.RealizedAs","direction":"from","actions":[{"actionName":"reboot","stepNumber":1,"isCritical":true}]}],"name":"reboot"}"
     }
 }
 ~~~
