@@ -30,5 +30,6 @@ Possible propagation (propagate_to) values are:
 **API**
 
 API end-point to list "DependsOn" relations (including _propagate_to_ attribute) from a given component:
-   `GET https://<your-server>/<ORGANIZATION-NAME>/assemblies/ASSEMBLY/transition/ENVIRONMENT/platforms/PLATFORM/components/COMPONENT/depends_on.json`
+
+`GET https://<your-server>/<ORGANIZATION-NAME>/assemblies/ASSEMBLY/transition/ENVIRONMENT/platforms/PLATFORM/components/COMPONENT/depends_on.json`
    
