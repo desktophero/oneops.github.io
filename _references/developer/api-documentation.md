@@ -53,7 +53,7 @@ Note: all calls will use the api token - see [Get Auth Token](#account-profile):
 	- [PUT Replace Component Instance](#put-replace-component-instance)
 	- [GET All available actions](#get-all-available-actions)
 	- [GET Instance ids](#get-instance-ids)
-	- [PUT Request to execute action](#put-request-to-execute-action)
+	- [POST Request to execute action](#post-request-to-execute-action)
 	- [GET status](#get-status)
 	- [GET Computes for a Platform](#get-computes-for-a-platform)
 
@@ -391,7 +391,7 @@ Body:
 
 ## POST Request to execute action
 
-`https://<your-server>/<ORGANIZATION-NAME>/operations/procedures/`
+`https://<your-server>/<ORGANIZATION-NAME>/operations/procedures`
 
 ~~~
 Body:
