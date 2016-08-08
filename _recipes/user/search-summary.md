@@ -10,11 +10,11 @@ Use the search feature to look up instances that are relevant to the filter crit
 There are multiple ways to go to the Search page.
 
 * In the top, right corner of the OneOps page, click the search option.
-  
+
 ![Search Sign Out](../../assets/local/images/search-sign-out.png)
-  
+
 * Goto `https://<oneops>/platform/<organization-name>/search` by providing the right organization name in the URL.
-* On the Organization summary page, click the dedicated tab for search. 
+* On the Organization summary page, click the dedicated tab for search.
 
 # Search Types
 
@@ -26,7 +26,7 @@ In Quick Search mode, the user has the option to select and instantly execute a 
 
 ## Advanced Search
 
-In Advanced Search mode, the left panel offers various filtering levels. The user can enter some or all of these filters to obtain the desired result set. The available advance search options are:
+Enable advance search by appending `?source=cms` to the search URL. In Advanced Search mode, the left panel offers various filtering levels. The user can enter some or all of these filters to obtain the desired result set. The available advance search options are:
 
 * **Namespace:** The path within which the searching is restricted. The widest it can go is by organization. For example, for service organization, the default namespace value is `/services`. To lookup instances within a specific environment, use `/<organization-name>/<assembly-name>/<environment-name>`.
 * **Scope:** Select the phase of the OneOps lifecycle to be searched. For example, to search realized instances of a compute, select `operations(bom*)`. To go to the compute configuration that is specific to an environment, choose `transition(manifest*)`.
