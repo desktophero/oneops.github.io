@@ -3,7 +3,7 @@ title: OneOps API Documentation
 id: oneops-api-documentation
 ---
 
-Note: all calls will use the api token - see [Get Auth Token](#account-profile): 
+Note: all calls will use the api token - see [Get Auth Token](#account-profile):
 
 - [Top Level](#top-level)
 	- [GET list of manifest (transition) Lb components](#get-list-of-manifest-transition-lb-components)
@@ -40,6 +40,7 @@ Note: all calls will use the api token - see [Get Auth Token](#account-profile):
 - [Environment](#environment)
 	- [GET Transition by name](#get-transition-by-name)
 	- [POST a new transition](#post-a-new-transition)
+	- [PUT Cloud status for environment platform_availability](#PUT-Cloud-status-for-environment-platform-availability)
 - [Commit & Deploy](#commit-and-deploy)
 	- [POST a commit to an environment](#post-a-commit-to-an-environment)
 	- [GET Latest release id](#get-latest-release-id)
@@ -142,7 +143,7 @@ Body: Take the response from get call and update all necessary fields/attributes
 The response has two major sections:
 
 - One describes metrics metadata.
-- One has the data itself in hierarchal form. 
+- One has the data itself in hierarchal form.
 - A third describes scope. Because scope is different for different reports, if you want to run the report by cloud rather than by assembly, you pass extra param in the url. For example:
 
 `https://<your-server>/<ORGANIZATION-NAME>/reports/compute.json?grouping=cloud`
@@ -194,7 +195,7 @@ TBD
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/design/platforms/<PLATFORM-NAME>`
 
-## POST a platform 
+## POST a platform
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/design/platforms`
 
@@ -314,6 +315,21 @@ Body:
     }
 }
 ~~~
+
+## PUT Cloud status for environment platform_availability
+
+`https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/transition/<ENVIRONMENT-NAME>/platforms/<PLATFORM_NAME>/cloud_configuration`
+
+~~~
+Body:
+
+{
+	"cloud_id": "<cloud ci-id>",
+	"attributes": {
+		"adminstatus": "active OR inactive"
+	}
+}
+~~~
 __Priority list:__
 
 - 1 => primary
@@ -322,7 +338,7 @@ __Priority list:__
 
 # Commit and Deploy
 
-## POST a commit to an environment 
+## POST a commit to an environment
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/transition/<ENVIRONMENT-NAME>/commit`
 
@@ -373,7 +389,7 @@ https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/transition/
 
 ## PUT Replace Component Instance
 
-`https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/operations/environments/<ENV_NAME>/platforms/<PLATFORM-NAME>/components/<COMPONENT-NAME>/instances/<INSTANCE_ID>/state`	
+`https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/operations/environments/<ENV_NAME>/platforms/<PLATFORM-NAME>/components/<COMPONENT-NAME>/instances/<INSTANCE_ID>/state`
 
 ~~~
 Body:
