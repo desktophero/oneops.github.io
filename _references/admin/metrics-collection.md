@@ -32,3 +32,18 @@ OneOps uses *Logstash* and *Logstash-Forwarder* to collect
 # How it all Works Together
 
 ![](../../assets/local/images/logstash-logstash.png)
+
+# Setup/Installation Details
+
+The Lumberjack protocol between the Logstash-Forwarder (Perf Agent running on each compute) and Logstash (Perf collector on server side) communicates over ssl and needs cert.
+This is how it is set up on OneOps Core and Gateway assemblies:
+
+1. You need to generate a  ssl cert for the domain name of the daq platform. You can check the fqdn component on the daq platform for the cname.
+2. Add that cert in the “Perf Collector Certificate” attribute of the inductor component under inductor platform (gateway assembly).
+   Inductor uses it to configure the perf-agents (logstash-forwarder) on each computes provisioned.
+3. Add the same cert on the logstash-cert File component of daq platform (core assembly). There are 2 attributes :
+	Content - this should have the cert.
+	Destination Path - the path where the cert should be created (/opt/.certs/logstash.crt).
+4. Add the ssl key for the cert on the logstash-key file component:
+	Content should have the key
+	Destination Path - the path where the cert key should be created. (/opt/.certs/logstash.key)
