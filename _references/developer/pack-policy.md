@@ -3,11 +3,10 @@ title: Pack policy
 id: pack-policy
 ---
 
-Policies can also be specified as part of the pack definition.The policy definition needs to added to the pack .rb file.
-This enables policy evaluation on all the CIs under the platform for the given pack. The violated policies can then be 
-fixed to avoid issues further down the application lifecycle. 
+Policies can also be specified as part of the pack definition.
+This enables policy evaluation on all CIs (components, attachments, platform variables, monitors) under the platform for a given pack. The violated policies can then be fixed to avoid issues further down the application lifecycle. 
 
-Following are few examples of pack based policies.
+The policy definitions are added to the pack ".rb" file in a given circuit. Following are few examples of pack based policies.
 
 ~~~ruby
 policy "env-profile",
