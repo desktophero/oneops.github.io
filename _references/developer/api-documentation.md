@@ -40,7 +40,7 @@ Note: all calls will use the api token - see [Get Auth Token](#account-profile):
 - [Environment](#environment)
 	- [GET Transition by name](#get-transition-by-name)
 	- [POST a new transition](#post-a-new-transition)
-	- [PUT Cloud status for environment platform_availability](#PUT-Cloud-status-for-environment-platform-availability)
+	- [PUT Cloud configuration for environment platform](#put-cloud-configuration-for-environment-platform)
 - [Commit & Deploy](#commit-and-deploy)
 	- [POST a commit to an environment](#post-a-commit-to-an-environment)
 	- [GET Latest release id](#get-latest-release-id)
@@ -316,7 +316,7 @@ Body:
 }
 ~~~
 
-## PUT Cloud status for environment platform_availability
+## PUT Cloud configuration for environment platform
 
 `https://<your-server>/<ORGANIZATION-NAME>/assemblies/<ASSEMBLY-NAME>/transition/<ENVIRONMENT-NAME>/platforms/<PLATFORM_NAME>/cloud_configuration`
 
@@ -326,15 +326,23 @@ Body:
 {
 	"cloud_id": "<cloud ci-id>",
 	"attributes": {
-		"adminstatus": "active OR inactive"
+		"adminstatus": "active OR inactive OR offline",
+		"priority": "1 OR 2",
+		"pct_scale": ...,
+		"dpmt_order": ...
 	}
 }
 ~~~
-__Priority list:__
 
-- 1 => primary
-- 2 => secondary
-- 0 => not used
+All attributes are optional (pass in only what needs to be updated).
+
+__Attributes:__
+
+- _adminstatus_ - administrative status of cloud
+- _priority_ - cloud priority (primary => `1` or secondary => `2`)
+- *pct_scale* - scale percentage
+- *dpmt_order* - deployment order
+
 
 # Commit and Deploy
 
