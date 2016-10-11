@@ -12,8 +12,8 @@ id: "getting-started"
             <span class="step-title alert-heading">Account</span>
 
             <ul class="tasks">
-                <li class="task"> <a href="#create-cloud">create clouds</a></span></li>
-                <li class="task"> <a href="#create-an-assembly">create assembly</a></span></li>
+                <li class="task"> <span><a href="#create-cloud">create clouds</a></span></li>
+                <li class="task"> <span><a href="#create-an-assembly">create assembly</a></span></li>
 
             </ul>
             <span class="step-number">1</span>
