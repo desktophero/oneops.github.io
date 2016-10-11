@@ -143,7 +143,7 @@ If step fails refer [troubleshooting](../testing).
 
 # Check Inductor  [Inductor](../key-concepts#inductor)
 
-> This section is for informative purpose only, The vagrant image has pre-installed and configured inducor ready to
+> This section is for informative purpose only, The vagrant image has pre-installed and configured inductor ready to
 execute workorder.
 
 
