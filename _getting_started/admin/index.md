@@ -103,7 +103,7 @@ up cloud and services The steps described to create an assembly,platform refers 
        1. Create Platform
        2. Create Environment
        3. Deploy an Environment
-   
+
 
 # Vagrant up
 1. Install the required software for Vagrant.
@@ -126,7 +126,7 @@ The setup does the following :
 
 ~~~ bash
 
-# After the successful install , you wills see this in console.
+# After the successful install , you will see this in console.
   ==> default: Done with admin
   ==> default: OneOps should be up on http://localhost:3000
   ==> default: Configure your port forwarding and shut down iptables service (or configure it) if needed
@@ -138,14 +138,14 @@ If step fails refer [troubleshooting](../testing).
 > UI should be up [here](http://localhost:9090/users/sign_in).
 
 # Set Up your Organization , Clouds, Cloud Services  
- 
+
 * Refer [User](../../user/getting-started/#create-cloud) Or see screen cast below.
-   
+
 
 # Check Inductor  [Inductor](../key-concepts#inductor)
 
-> This section is for informative purpose only, The vagrant image has pre-installed and configured inducor ready to 
-execute workorder. 
+> This section is for informative purpose only, The vagrant image has pre-installed and configured inductor ready to
+execute workorder.
 
 
 Inductor executes the **workoders/actionOrders** pushed by **controller** to
@@ -157,14 +157,14 @@ cloud location specified at cloud creation. Refer [this](../references/#inductor
 vagrant ssh
 sudo su
 cd /opt/oneops/inductor
-inductor status 
-indcutor tail 
-## should show inductor successfuly connected to amq. 
+inductor status
+indcutor tail
+## should show inductor successfuly connected to amq.
 
 ~~~
 
 ## Inductor directory Structure
->The directory structure after you have created inductor successfully will look like this, 
+>The directory structure after you have created inductor successfully will look like this,
 
 ~~~ bash
 cd /opt/oneops/inductor
@@ -190,7 +190,7 @@ cd /opt/oneops/inductor
 
 # Validate Set up
 
-Create Assembly, Platforms and environment to test it out. Refer [User](./user/getting-started)
+Create Assembly, Platforms and environment to test it out. Refer [User](/../user/getting-started)
 Or
 See screen cast below (might work better on the full screen, we are working on improving this).
 
